@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# internal scratch manifests generated during content migration - not app code
+/data/_manifest_all.json
+/data/_manifest_projects.json
+/data/_download_failures.txt

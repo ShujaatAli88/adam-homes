@@ -65,7 +65,7 @@ export default function Navbar() {
                 )}
               </Link>
               {item.children && (
-                <div className="invisible absolute left-0 top-full min-w-[260px] translate-y-2 rounded-sm bg-white opacity-0 shadow-xl ring-1 ring-black/5 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="invisible absolute right-0 top-full min-w-[260px] translate-y-2 rounded-sm bg-white opacity-0 shadow-xl ring-1 ring-black/5 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                   <ul className="py-2">
                     {item.children.map((child) => (
                       <li key={child.label}>

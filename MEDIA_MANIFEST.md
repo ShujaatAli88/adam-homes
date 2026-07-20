@@ -10,7 +10,14 @@ Legend: **Local path** = where to place the file under `/public` · **Original s
 
 - **Gallery Photos** and **Gallery Videos**: FULFILLED. You provided a full local library (164 photos in `/public/media/photos/`, 26 videos + posters in `/public/media/videos/`), wired into those two pages directly. These pages had no fixed content on the live site (Gallery Photos was a live Facebook feed; Gallery Videos had only 4 clips), so your fuller library is used as-is — nothing further needed here.
 - **Land for Sale**: FULFILLED. Your 6 local listing photos matched by county + acreage — see below.
-- **Everything else below** (home cards, the two service pages, and the 4 project BEFORE/DURING/COMPLETE galleries) is **still pending** — these need the *specific* original-site images, not the flat photo/video pool, because there's no way to recover which of your 164 renamed photos belongs in which specific slot (confirmed: the numbering isn't in site order, and the pool is smaller than the 333 total slots below). Drop files in using the **exact filenames** listed so they land in the right place automatically.
+- **Content check on your photo/video library**: reviewed all 164 photos and 26 video posters by content. It's ~95% controlled-burn documentation (active flame + post-burn aftermath), plus a handful of creek/water and building/lodge shots. There is **no** road-construction, septic/pipe, pasture, wildlife, food-plot, or aerial-drone content in it.
+- **Wired from your library (real photos, correctly placed)**:
+  - Homepage hero video (`/media/videos/video-001.mp4`) — a wide burn shot, used as a stand-in welcome video (you noted this is fine for now)
+  - Control Burning page's full 30-image gallery — perfect thematic match
+  - The 3 "Controlled Burn" labeled slots in Land Maintenance's gallery
+  - All 20 slots across the 4 project pages whose *original filename* was `Prescribed-Burns-*`
+  - The "Controlled Burns" home-page service card + the "All Photos" home-page project card (both used a burn photo on the live site too)
+- **Still pending** (genuinely nothing in your library matches these — you said you'll add photos for these categories): everything below marked with an original filename that is *not* `Prescribed-Burns-*` — i.e. road-construction, septic/waterline, pasture, wildlife, timber, land-mapping, food-plot, home-site-prep, and aerial-drone slots across Land Maintenance and the 4 project pages, plus the 12 remaining home-page cards. Drop files in using the **exact filenames** listed so they land in the right place automatically.
 
 
 ## global

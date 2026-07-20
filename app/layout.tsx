@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import ScrollProgress from "@/components/ui/ScrollProgress";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 const kreon = Kreon({
   variable: "--font-kreon",
@@ -41,6 +43,8 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col overflow-x-hidden">
         <SmoothScroll />
+        <ScrollProgress />
+        <CustomCursor />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:m-3 focus:rounded-sm focus:bg-brand-900 focus:px-4 focus:py-2 focus:text-white"
