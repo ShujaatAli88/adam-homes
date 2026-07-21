@@ -8,7 +8,7 @@ export default function PageHero({
   crumb: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-brand-900 px-5 py-20 text-center text-white sm:py-28">
+    <section className="relative overflow-hidden bg-brand-900 px-5 pb-16 pt-32 text-center text-white sm:pb-20 sm:pt-40">
       <div
         aria-hidden
         className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_60%)]"
