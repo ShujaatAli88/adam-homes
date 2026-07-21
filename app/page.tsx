@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import CardLink from "@/components/ui/CardLink";
 import HeroParallax from "@/components/ui/HeroParallax";
@@ -20,7 +21,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative flex h-[100vh] min-h-[620px] w-full items-center justify-center overflow-hidden bg-brand-950 text-white">
         <HeroParallax src={heroVideo} />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/25 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/5 to-black/55" />
         <Grain />
 
         <div className="relative z-10 flex flex-col items-center gap-10 px-5 text-center">
@@ -38,13 +39,13 @@ export default function Home() {
 
         <div
           aria-hidden
-          className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-white/70"
+          className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-white/80"
         >
-          <span className="text-[10px] font-semibold uppercase tracking-[0.25em]">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.25em] drop-shadow">
             Scroll
           </span>
-          <span className="flex h-9 w-5 items-start justify-center rounded-full border border-white/50 pt-1.5">
-            <span className="h-1.5 w-1 animate-bounce rounded-full bg-white/80" />
+          <span className="flex h-9 w-5 items-start justify-center rounded-full border border-white/60 pt-1.5">
+            <span className="h-1.5 w-1 animate-bounce rounded-full bg-white" />
           </span>
         </div>
       </section>
@@ -57,12 +58,12 @@ export default function Home() {
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-rust-100/60 blur-3xl"
+          className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-surface-2 blur-3xl"
         />
         <div className="relative mx-auto grid max-w-5xl grid-cols-1 items-center gap-8 sm:grid-cols-[auto_1fr]">
           <Reveal className="relative flex flex-col items-start">
             <GhostText>LAND</GhostText>
-            <span className="mb-3 h-px w-14 bg-rust" />
+            <span className="mb-3 h-px w-14 bg-brand-500" />
             <h1 className="relative text-[clamp(3rem,12vw,7.5rem)] font-semibold leading-[0.85] text-brand-900">
               {heroIntro.eyebrow}
             </h1>
@@ -73,20 +74,28 @@ export default function Home() {
             </h2>
           </Reveal>
         </div>
-        <AngledDivider fill="var(--color-brand-900)" />
+        <AngledDivider fill="var(--color-brand-950)" />
       </section>
 
-      {/* Passion band */}
-      <section className="relative overflow-hidden bg-brand-900 px-5 pb-20 pt-4 sm:pb-24 sm:pt-6">
+      {/* Passion band - real photo backdrop instead of a flat color panel */}
+      <section className="relative overflow-hidden px-5 pb-20 pt-4 sm:pb-24 sm:pt-6">
+        <Image
+          src="/images/hero-poster.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-950/90 via-brand-950/80 to-brand-950/95" />
         <Grain />
         <Reveal className="relative mx-auto max-w-4xl">
           <span
             aria-hidden
-            className="font-display block text-[5rem] leading-none text-rust/50 sm:text-[7rem]"
+            className="font-display block text-[5rem] leading-none text-brand-500/60 sm:text-[7rem]"
           >
             &ldquo;
           </span>
-          <div className="border-l-2 border-rust pl-6 sm:pl-10">
+          <div className="border-l-2 border-brand-500 pl-6 sm:pl-10">
             <p className="text-[clamp(1.05rem,2.2vw,1.5rem)] font-light leading-relaxed text-white/95">
               {passionText}
             </p>
@@ -102,7 +111,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-[1200px]">
           <Reveal className="relative text-center">
             <GhostText light>Services</GhostText>
-            <p className="relative mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-rust">
+            <p className="relative mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
               What We Do
             </p>
             <h2 className="relative text-[clamp(1.9rem,5vw,3rem)] font-semibold text-white">
@@ -132,7 +141,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-[1200px]">
           <Reveal className="relative text-center">
             <GhostText light>Projects</GhostText>
-            <p className="relative mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-rust">
+            <p className="relative mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
               Our Work
             </p>
             <h2 className="relative text-[clamp(1.9rem,5vw,3rem)] font-semibold text-white">
@@ -155,7 +164,7 @@ export default function Home() {
         </div>
 
         <div className="relative mt-16 sm:mt-20">
-          <span aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-rust to-transparent" />
+          <span aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-500 to-transparent" />
           <AngledDivider fill="var(--color-charcoal-950)" />
         </div>
       </section>

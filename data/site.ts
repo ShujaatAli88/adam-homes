@@ -37,7 +37,16 @@ export const site = {
       "hours": "Closed"
     }
   ],
-  "footerNote": "High Ground Land Solutions | © All Rights Reserved | Web Design & Marketing by Atlanta SEO"
+  "footerNote": "High Ground Land Solutions | © All Rights Reserved | Web Design & Marketing by Atlanta SEO",
+  "footerTagline": "High Ground Land Solutions is a full-service land management company and licensed, insured land realtor serving West Alabama — owner-operated and Veteran-owned.",
+  "veteranBadge": "Veteran-Owned & Operated",
+  "newsletterLabel": "Get Land Listings & Updates",
+  "social": {
+    "instagram": "https://www.instagram.com/adamaderholt/",
+    "facebook": "https://www.facebook.com/highgroundlandsolutions/",
+    "youtube": "https://www.youtube.com/@AdamAderholt",
+    "linkedin": "https://www.linkedin.com/in/adam-aderholt-93b41510/"
+  }
 };
 
 export type NavItem = { label: string; href: string; children?: { label: string; href: string }[] };

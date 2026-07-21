@@ -7,10 +7,36 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
 import { nav, site } from "@/data/site";
+import { homeProjectCards } from "@/data/home";
+
+const projectThumbs: Record<string, string> = Object.fromEntries(
+  homeProjectCards.map((c) => [c.href, c.img])
+);
+
+function IconTool() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M14.7 6.3a4 4 0 1 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2 2.6-2.6Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+function IconFlame() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M12.5 2c.7 2.6 2.2 4.3 3.8 6.2 1.8 2.1 3.2 4.3 3.2 7.1a7.5 7.5 0 0 1-15 0c0-2.1.8-3.7 1.8-5.1.2 1.7 1 2.8 2.1 3.5-.4-2.8.4-5 2-6.9.1 1.5.7 2.5 1.6 3.3-.2-2.9.6-5.3-.5-8.1Zm-.5 11a2.5 2.5 0 0 0-2.5 2.5c0 1.4 1.1 2.5 2.5 2.5s2.5-1.1 2.5-2.5A2.5 2.5 0 0 0 12 13Z" />
+    </svg>
+  );
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hovered, setHovered] = useState<number | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -26,8 +52,14 @@ export default function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    if (open) {
+      window.__lenis?.stop();
+    } else {
+      window.__lenis?.start();
+    }
     return () => {
       document.body.style.overflow = "";
+      window.__lenis?.start();
     };
   }, [open]);
 
@@ -61,13 +93,36 @@ export default function Navbar() {
           <nav
             className="hidden items-center gap-1 lg:flex"
             aria-label="Main Menu"
+            onMouseLeave={() => setHovered(null)}
           >
-            {nav.map((item) => (
-              <div key={item.label} className="group relative">
+            {nav.map((item, i) => (
+              <div
+                key={item.label}
+                className="group relative"
+                onMouseEnter={() => setHovered(i)}
+              >
+                <AnimatePresence>
+                  {hovered === i && (
+                    <motion.div
+                      layoutId="nav-hover-pill"
+                      className={clsx(
+                        "absolute inset-0 rounded-full",
+                        scrolled ? "bg-brand-100" : "bg-white/15"
+                      )}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{
+                        layout: { type: "spring", stiffness: 420, damping: 32 },
+                        opacity: { duration: 0.15 },
+                      }}
+                    />
+                  )}
+                </AnimatePresence>
                 <Link
                   href={item.href}
                   className={clsx(
-                    "relative flex items-center gap-1.5 px-4 py-2 text-[0.8rem] font-semibold uppercase tracking-wide transition-colors",
+                    "relative z-10 flex items-center gap-1.5 px-4 py-2 text-[0.8rem] font-semibold uppercase tracking-wide transition-colors",
                     scrolled
                       ? "text-ink-2 hover:text-brand-900"
                       : "text-white/90 hover:text-white"
@@ -79,7 +134,7 @@ export default function Navbar() {
                       width="9"
                       height="6"
                       viewBox="0 0 10 6"
-                      className="opacity-70 transition-transform group-hover:rotate-180"
+                      className="opacity-70 transition-transform duration-300 group-hover:rotate-180"
                       aria-hidden
                     >
                       <path
@@ -90,25 +145,72 @@ export default function Navbar() {
                       />
                     </svg>
                   )}
-                  <span
-                    aria-hidden
-                    className="absolute bottom-0.5 left-1/2 h-[1.5px] w-0 -translate-x-1/2 bg-rust transition-all duration-300 group-hover:w-6"
-                  />
                 </Link>
-                {item.children && (
-                  <div className="invisible absolute right-0 top-full min-w-[250px] translate-y-2 rounded-xl bg-white opacity-0 shadow-xl ring-1 ring-black/5 transition-all duration-200 group-hover:visible group-hover:translate-y-1 group-hover:opacity-100">
-                    <ul className="p-2">
-                      {item.children.map((child) => (
-                        <li key={child.label}>
+
+                {item.children && item.label === "PROJECTS" && (
+                  <div className="invisible absolute right-0 top-full w-[420px] translate-y-3 pt-3 opacity-0 transition-all duration-300 ease-out group-hover:visible group-hover:translate-y-1 group-hover:opacity-100">
+                    <div className="overflow-hidden rounded-2xl bg-white shadow-2xl shadow-black/20 ring-1 ring-black/5">
+                      <span className="block h-[3px] w-full bg-gradient-to-r from-brand-500 via-brand-600 to-brand-500" />
+                      <div className="grid grid-cols-2 gap-1 p-3">
+                        {item.children.map((child, ci) => (
                           <Link
+                            key={child.label}
                             href={child.href}
-                            className="block rounded-lg px-4 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-brand-100 hover:text-brand-900"
+                            className="group/item relative flex items-center gap-3 overflow-hidden rounded-xl p-2 transition-colors duration-200 hover:bg-brand-100"
+                            style={{ transitionDelay: `${ci * 25}ms` }}
                           >
-                            {child.label}
+                            <span className="relative h-12 w-14 shrink-0 overflow-hidden rounded-lg bg-surface">
+                              {projectThumbs[child.href] && (
+                                <Image
+                                  src={projectThumbs[child.href]}
+                                  alt=""
+                                  fill
+                                  sizes="56px"
+                                  className="object-cover transition-transform duration-400 group-hover/item:scale-110"
+                                />
+                              )}
+                            </span>
+                            <span className="text-[0.8rem] font-semibold leading-snug text-ink transition-colors group-hover/item:text-brand-900">
+                              {child.label}
+                            </span>
+                            <span
+                              aria-hidden
+                              className="absolute left-0 top-1/2 h-0 w-[3px] -translate-y-1/2 bg-brand-500 transition-all duration-300 group-hover/item:h-8"
+                            />
                           </Link>
-                        </li>
-                      ))}
-                    </ul>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {item.children && item.label === "SERVICES" && (
+                  <div className="invisible absolute right-0 top-full min-w-[280px] translate-y-3 pt-3 opacity-0 transition-all duration-300 ease-out group-hover:visible group-hover:translate-y-1 group-hover:opacity-100">
+                    <div className="overflow-hidden rounded-2xl bg-white shadow-2xl shadow-black/20 ring-1 ring-black/5">
+                      <span className="block h-[3px] w-full bg-gradient-to-r from-brand-500 via-brand-600 to-brand-500" />
+                      <ul className="p-2">
+                        {item.children.map((child, ci) => (
+                          <li key={child.label}>
+                            <Link
+                              href={child.href}
+                              className="group/item relative flex items-center gap-3 overflow-hidden rounded-xl px-3 py-3 transition-colors duration-200 hover:bg-brand-100"
+                              style={{ transitionDelay: `${ci * 25}ms` }}
+                            >
+                              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-900 transition-colors duration-300 group-hover/item:bg-brand-900 group-hover/item:text-cream">
+                                {ci === 0 ? <IconTool /> : <IconFlame />}
+                              </span>
+                              <span className="text-sm font-medium text-ink transition-colors group-hover/item:text-brand-900">
+                                {child.label}
+                              </span>
+                              <span
+                                aria-hidden
+                                className="absolute left-0 top-1/2 h-0 w-[3px] -translate-y-1/2 bg-brand-500 transition-all duration-300 group-hover/item:h-6"
+                              />
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 )}
               </div>
@@ -177,7 +279,7 @@ export default function Navbar() {
               transition={{ delay: 0.3 }}
               className="flex flex-col items-center gap-1 pb-10 text-center text-white/60"
             >
-              <a href={site.phoneHref} className="text-sm font-semibold text-rust">
+              <a href={site.phoneHref} className="text-sm font-semibold text-brand-500">
                 {site.phone}
               </a>
               <p className="text-xs">{site.address}</p>
@@ -208,7 +310,7 @@ function MobileNavItem({
       <div className="flex items-center justify-center gap-2">
         <Link
           href={item.href}
-          className="py-3 text-xl font-semibold uppercase tracking-wide text-white transition-colors hover:text-rust"
+          className="py-3 text-xl font-semibold uppercase tracking-wide text-white transition-colors hover:text-brand-500"
         >
           {item.label}
         </Link>
@@ -246,7 +348,7 @@ function MobileNavItem({
               <Link
                 key={child.label}
                 href={child.href}
-                className="block py-2 text-sm text-white/70 transition-colors hover:text-rust"
+                className="block py-2 text-sm text-white/70 transition-colors hover:text-brand-500"
               >
                 {child.label}
               </Link>

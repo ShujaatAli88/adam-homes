@@ -31,7 +31,7 @@ export default function CardLink({
     >
       <Link
         href={href}
-        className="group relative flex h-full flex-col overflow-hidden rounded-[10px] bg-cream shadow-[inset_0_0_0_1px_rgba(255,255,255,0.5)] ring-1 ring-rust/20 transition-all duration-400 ease-out hover:-translate-y-2 hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.35),inset_0_0_0_1px_rgba(255,255,255,0.5)] hover:ring-rust/60"
+        className="group relative flex h-full flex-col overflow-hidden rounded-[10px] bg-cream shadow-[inset_0_0_0_1px_rgba(255,255,255,0.5)] ring-1 ring-black/10 transition-all duration-400 ease-out hover:-translate-y-2 hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.35),inset_0_0_0_1px_rgba(255,255,255,0.5)] hover:ring-brand-500/70"
         style={{
           clipPath:
             "polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%)",
@@ -76,7 +76,7 @@ export default function CardLink({
             <span
               key={i}
               aria-hidden
-              className={`absolute h-3 w-3 border-rust opacity-0 transition-all duration-300 ease-out group-hover:opacity-90 ${pos}`}
+              className={`absolute h-3 w-3 border-brand-500 opacity-0 transition-all duration-300 ease-out group-hover:opacity-90 ${pos}`}
               style={{ transitionDelay: `${i * 40}ms` }}
             />
           ))}
@@ -85,20 +85,20 @@ export default function CardLink({
         <div className="relative flex min-h-[4.5rem] flex-1 items-center justify-between gap-2 px-3.5 py-3 sm:min-h-[5rem] sm:px-4">
           <span
             aria-hidden
-            className="absolute inset-x-0 top-0 h-[2px] origin-left scale-x-0 bg-gradient-to-r from-rust via-rust/60 to-transparent transition-transform duration-500 ease-out group-hover:scale-x-100"
+            className="absolute inset-x-0 top-0 h-[2px] origin-left scale-x-0 bg-gradient-to-r from-brand-500 via-brand-500/60 to-transparent transition-transform duration-500 ease-out group-hover:scale-x-100"
           />
           <div>
-            <span className="mb-1 block h-[2px] w-6 bg-rust transition-all duration-300 ease-out group-hover:w-10" />
-            <h3 className="line-clamp-2 text-[0.85rem] font-semibold leading-snug text-brand-900 transition-colors duration-300 group-hover:text-brown sm:text-[0.95rem]">
+            <span className="mb-1 block h-[2px] w-6 bg-brand-500 transition-all duration-300 ease-out group-hover:w-10" />
+            <h3 className="line-clamp-2 text-[0.85rem] font-semibold leading-snug text-brand-900 sm:text-[0.95rem]">
               {title}
             </h3>
           </div>
 
           <span
             aria-hidden
-            className="flex h-8 w-8 shrink-0 items-center justify-between gap-1.5 overflow-hidden rounded-full border border-rust/45 px-0 text-brand-900 transition-all duration-400 ease-out group-hover:w-[5.5rem] group-hover:border-brand-900 group-hover:bg-brand-900 group-hover:px-3 group-hover:text-cream"
+            className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full border border-black/15 text-brand-900 transition-all duration-400 ease-out group-hover:w-[5.5rem] group-hover:justify-between group-hover:border-brand-900 group-hover:bg-brand-900 group-hover:px-3 group-hover:text-cream"
           >
-            <span className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-wider opacity-0 transition-opacity delay-100 duration-200 group-hover:opacity-100">
+            <span className="w-0 overflow-hidden whitespace-nowrap text-[10px] font-semibold uppercase tracking-wider opacity-0 transition-all duration-300 group-hover:w-8 group-hover:opacity-100">
               View
             </span>
             <svg

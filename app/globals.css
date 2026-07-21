@@ -18,9 +18,6 @@
   --color-border: #e2e2e2;
 
   /* Earthy accent extensions layered on top of the sampled brand greens */
-  --color-rust: #a3572f; /* burnt terracotta accent for hover/borders/badges - pairs with hunter green instead of a clashing gold */
-  --color-rust-100: #ecd9c9;
-  --color-brown: #5a4632; /* deep earthy brown */
   --color-cream: #f6f1e6; /* warm off-white surface */
   --color-charcoal: #211f1a; /* warm near-black, footer/nav-scrolled bg */
   --color-charcoal-950: #131210; /* deepest near-black, reserved for footer so it reads as its own block */
@@ -48,9 +45,6 @@
   --color-surface-2: var(--color-surface-2);
   --color-border: var(--color-border);
 
-  --color-rust: var(--color-rust);
-  --color-rust-100: var(--color-rust-100);
-  --color-brown: var(--color-brown);
   --color-cream: var(--color-cream);
   --color-charcoal: var(--color-charcoal);
   --color-charcoal-950: var(--color-charcoal-950);
@@ -115,7 +109,7 @@ h6 {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-rust);
+  outline: 3px solid var(--color-brand-500);
   outline-offset: 2px;
 }
 
