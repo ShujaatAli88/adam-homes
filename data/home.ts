@@ -79,6 +79,12 @@ export const homeProjectCards: HomeCard[] = [
     "alt": "Aerial Drone Photography Hale county"
   },
   {
+    "title": "Coal Ridge RV Park",
+    "href": "/coal-ridge-rv-park",
+    "img": "/images/projects/coal-ridge-rv-park/after/683542237_122097376821292203_3298487988356991951_n.jpg",
+    "alt": "Coal Ridge RV Park - Berry AL"
+  },
+  {
     "title": "All Photos",
     "href": "/gallery-photos",
     "img": "/images/home/projects/Prescribed-Burns-Pickens-county.jpeg",

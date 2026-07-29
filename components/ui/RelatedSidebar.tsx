@@ -13,17 +13,17 @@ export default function RelatedSidebar({
   socialGallery: SocialGalleryItem[];
 }) {
   return (
-    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+    <div className="grid grid-cols-1 gap-8 rounded-2xl bg-white p-7 shadow-sm ring-1 ring-black/5 sm:grid-cols-2 sm:p-10">
       <Reveal>
         <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-brand-600">
           Latest Land Management Projects
         </h4>
-        <ul className="space-y-2">
+        <ul className="space-y-1">
           {relatedProjects.map((p) => (
             <li key={p.label}>
               <Link
                 href={p.href}
-                className="group flex items-center gap-2 text-lg font-semibold text-brand-900 transition-colors hover:text-brand-600"
+                className="group flex items-center gap-2 py-1.5 text-lg font-semibold text-brand-900 transition-colors hover:text-brand-600"
               >
                 <span
                   aria-hidden
@@ -45,7 +45,7 @@ export default function RelatedSidebar({
             <Link
               key={g.label}
               href={g.href}
-              className="group relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-sm shadow-sm ring-1 ring-black/5"
+              className="group relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-xl shadow-sm ring-1 ring-black/5 transition-all duration-400 hover:-translate-y-1 hover:shadow-lg"
             >
               <Image
                 src={g.bg}
@@ -58,6 +58,7 @@ export default function RelatedSidebar({
               <span className="relative text-sm font-semibold uppercase tracking-wide text-white">
                 {g.label}
               </span>
+              <span className="absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-brand-500 transition-transform duration-500 ease-out group-hover:scale-x-100" />
             </Link>
           ))}
         </div>

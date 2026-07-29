@@ -1,114 +1,42 @@
-// Your full local video library in /public/media/videos/ (with posters in /public/media/videos/posters/).
+// The exact 4 video slots from the live site's Gallery Videos page (verified
+// directly against highgroundland.com/gallery-videos/) - 3 unique source
+// files; slot 1 and slot 3 use the same file, which is intentional/verbatim
+// on the live site, not a duplicate-content mistake.
 export const heading = {
   eyebrow: 'GALLERY VIDEOS',
   title: 'CHECK OUT SOME OF OUR PAST WORK',
   cta: { label: 'CONTACT US', href: '/contact' },
 };
 
-export type VideoEntry = { src: string; poster: string };
+// `duration` is real technical metadata read from the actual video file (not
+// invented copy). `label` is only used for the accessible name (aria-label /
+// screen readers) - the live site shows no visible caption text on these
+// cards, so we don't render one either.
+export type VideoEntry = { src: string; poster: string; duration: string; label: string };
+
 export const videos: VideoEntry[] = [
   {
-    "src": "/media/videos/video-001.mp4",
-    "poster": "/media/videos/posters/video-001.jpg"
+    src: '/videos/gallery/video-01.mp4',
+    poster: '/videos/gallery/posters/video-01.jpg',
+    duration: '1:58',
+    label: 'Aerial overview',
   },
   {
-    "src": "/media/videos/video-002.mp4",
-    "poster": "/media/videos/posters/video-002.jpg"
+    src: '/videos/gallery/video-02.mp4',
+    poster: '/videos/gallery/posters/video-02.jpg',
+    duration: '0:07',
+    label: 'Perry County',
   },
   {
-    "src": "/media/videos/video-003.mp4",
-    "poster": "/media/videos/posters/video-003.jpg"
+    src: '/videos/gallery/video-01.mp4',
+    poster: '/videos/gallery/posters/video-01.jpg',
+    duration: '1:58',
+    label: 'Aerial overview',
   },
   {
-    "src": "/media/videos/video-004.mp4",
-    "poster": "/media/videos/posters/video-004.jpg"
+    src: '/videos/gallery/video-03.mp4',
+    poster: '/videos/gallery/posters/video-03.jpg',
+    duration: '0:11',
+    label: 'Fayette County',
   },
-  {
-    "src": "/media/videos/video-005.mp4",
-    "poster": "/media/videos/posters/video-005.jpg"
-  },
-  {
-    "src": "/media/videos/video-006.mp4",
-    "poster": "/media/videos/posters/video-006.jpg"
-  },
-  {
-    "src": "/media/videos/video-007.mp4",
-    "poster": "/media/videos/posters/video-007.jpg"
-  },
-  {
-    "src": "/media/videos/video-008.mp4",
-    "poster": "/media/videos/posters/video-008.jpg"
-  },
-  {
-    "src": "/media/videos/video-009.mp4",
-    "poster": "/media/videos/posters/video-009.jpg"
-  },
-  {
-    "src": "/media/videos/video-010.mp4",
-    "poster": "/media/videos/posters/video-010.jpg"
-  },
-  {
-    "src": "/media/videos/video-011.mp4",
-    "poster": "/media/videos/posters/video-011.jpg"
-  },
-  {
-    "src": "/media/videos/video-012.mp4",
-    "poster": "/media/videos/posters/video-012.jpg"
-  },
-  {
-    "src": "/media/videos/video-013.mp4",
-    "poster": "/media/videos/posters/video-013.jpg"
-  },
-  {
-    "src": "/media/videos/video-014.mp4",
-    "poster": "/media/videos/posters/video-014.jpg"
-  },
-  {
-    "src": "/media/videos/video-015.mp4",
-    "poster": "/media/videos/posters/video-015.jpg"
-  },
-  {
-    "src": "/media/videos/video-016.mp4",
-    "poster": "/media/videos/posters/video-016.jpg"
-  },
-  {
-    "src": "/media/videos/video-017.mp4",
-    "poster": "/media/videos/posters/video-017.jpg"
-  },
-  {
-    "src": "/media/videos/video-018.mp4",
-    "poster": "/media/videos/posters/video-018.jpg"
-  },
-  {
-    "src": "/media/videos/video-019.mp4",
-    "poster": "/media/videos/posters/video-019.jpg"
-  },
-  {
-    "src": "/media/videos/video-020.mp4",
-    "poster": "/media/videos/posters/video-020.jpg"
-  },
-  {
-    "src": "/media/videos/video-021.mp4",
-    "poster": "/media/videos/posters/video-021.jpg"
-  },
-  {
-    "src": "/media/videos/video-022.mp4",
-    "poster": "/media/videos/posters/video-022.jpg"
-  },
-  {
-    "src": "/media/videos/video-023.mp4",
-    "poster": "/media/videos/posters/video-023.jpg"
-  },
-  {
-    "src": "/media/videos/video-024.mp4",
-    "poster": "/media/videos/posters/video-024.jpg"
-  },
-  {
-    "src": "/media/videos/video-025.mp4",
-    "poster": "/media/videos/posters/video-025.jpg"
-  },
-  {
-    "src": "/media/videos/video-026.mp4",
-    "poster": "/media/videos/posters/video-026.jpg"
-  }
 ];

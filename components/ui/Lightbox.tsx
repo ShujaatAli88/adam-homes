@@ -7,6 +7,56 @@ import { RevealGroup } from "./Reveal";
 
 export type LightboxImage = { src: string; alt: string };
 
+// Large galleries (e.g. a project phase with 50+ photos) mount that many
+// Framer Motion instances + IntersectionObservers at once on tab-switch,
+// which can visibly freeze scrolling for a moment. Past this size we skip
+// the per-card motion wrapper and stagger reveal entirely - same look via
+// plain CSS transitions, none of the per-item JS animation overhead.
+const MOTION_THRESHOLD = 30;
+
+function GridCard({
+  img,
+  index,
+  total,
+  onOpen,
+}: {
+  img: LightboxImage;
+  index: number;
+  total: number;
+  onOpen: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onOpen}
+      className="group relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-surface text-left shadow-sm ring-1 ring-black/5 transition-all duration-400 ease-out hover:-translate-y-1 hover:shadow-xl hover:ring-brand-500/50"
+      style={{ contentVisibility: "auto", containIntrinsicSize: "0 280px" }}
+      aria-label={`Open image ${index + 1} of ${total}`}
+    >
+      <Image
+        src={img.src}
+        alt={img.alt}
+        fill
+        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 33vw"
+        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+        loading="lazy"
+      />
+      <span className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <span
+        aria-hidden
+        className="absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-300 group-hover:opacity-100"
+      >
+        <span className="flex h-10 w-10 scale-75 items-center justify-center rounded-full bg-white/90 text-brand-900 shadow-lg transition-transform duration-300 group-hover:scale-100">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="1.8" />
+            <path d="m20 20-3.8-3.8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          </svg>
+        </span>
+      </span>
+    </button>
+  );
+}
+
 export default function Lightbox({
   images,
   columns = "sm:grid-cols-2 lg:grid-cols-3",
@@ -44,33 +94,37 @@ export default function Lightbox({
 
   if (!images.length) return null;
 
+  const gridClass = `grid grid-cols-2 gap-3 sm:gap-5 ${columns}`;
+
   return (
     <>
-      <RevealGroup className={`grid grid-cols-1 gap-4 sm:gap-5 ${columns}`}>
-        {images.map((img, i) => (
-          <motion.button
-            key={img.src + i}
-            type="button"
-            onClick={() => setActiveIndex(i)}
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
-            }}
-            className="group relative aspect-[4/3] w-full overflow-hidden rounded-sm bg-surface text-left ring-1 ring-black/5"
-            aria-label={`Open image ${i + 1} of ${images.length}`}
-          >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-              loading="lazy"
+      {images.length > MOTION_THRESHOLD ? (
+        <div className={gridClass}>
+          {images.map((img, i) => (
+            <GridCard
+              key={img.src + i}
+              img={img}
+              index={i}
+              total={images.length}
+              onOpen={() => setActiveIndex(i)}
             />
-            <span className="absolute inset-0 bg-brand-900/0 transition-colors duration-300 group-hover:bg-brand-900/10" />
-          </motion.button>
-        ))}
-      </RevealGroup>
+          ))}
+        </div>
+      ) : (
+        <RevealGroup className={gridClass}>
+          {images.map((img, i) => (
+            <motion.div
+              key={img.src + i}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+              }}
+            >
+              <GridCard img={img} index={i} total={images.length} onOpen={() => setActiveIndex(i)} />
+            </motion.div>
+          ))}
+        </RevealGroup>
+      )}
 
       <AnimatePresence>
         {activeIndex !== null && (

@@ -96,6 +96,10 @@ export const nav: NavItem[] = [
       {
         "label": "The Eagle's Nest Project",
         "href": "/the-eagles-nest-project"
+      },
+      {
+        "label": "Coal Ridge RV Park",
+        "href": "/coal-ridge-rv-park"
       }
     ]
   },

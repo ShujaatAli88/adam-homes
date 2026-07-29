@@ -1,76 +1,298 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactElement, type FormEvent } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { contact } from "@/data/contact";
 
-export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
-
+function IconPerson() {
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        setSubmitted(true);
-      }}
-      className="mx-auto max-w-2xl space-y-5"
-    >
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-        {contact.form.fields.slice(0, 2).map((f) => (
-          <Field key={f.name} {...f} />
-        ))}
-      </div>
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-        {contact.form.fields.slice(2).map((f) => (
-          <Field key={f.name} {...f} />
-        ))}
-      </div>
-      <div>
-        <label className="mb-1.5 block text-sm font-medium text-ink-2">
-          {contact.form.message.label}
-        </label>
-        <textarea
-          name={contact.form.message.name}
-          rows={6}
-          className="w-full rounded-sm border border-border bg-white px-4 py-3 text-ink outline-none transition-colors focus:border-brand-500"
-        />
-      </div>
-      <button
-        type="submit"
-        className="min-h-[44px] w-full rounded-sm bg-brand-900 px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-brand-600 sm:w-auto"
-      >
-        {contact.form.submitLabel}
-      </button>
-      {submitted && (
-        <p role="status" className="text-sm font-medium text-brand-600">
-          Thanks — your message has been received.
-        </p>
-      )}
-    </form>
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <circle cx="12" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M4.5 20c1.4-3.7 4.4-5.5 7.5-5.5s6.1 1.8 7.5 5.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    </svg>
+  );
+}
+function IconMail() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M3.5 6.5 12 13l8.5-6.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    </svg>
+  );
+}
+function IconPhone() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z"
+        stroke="currentColor"
+        strokeWidth="1.7"
+      />
+    </svg>
+  );
+}
+function IconMessage() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M4 5.5h16A1.5 1.5 0 0 1 21.5 7v9A1.5 1.5 0 0 1 20 17.5H9l-4.5 3.7V17.5H4A1.5 1.5 0 0 1 2.5 16V7A1.5 1.5 0 0 1 4 5.5Z"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+function IconCheck() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="M5 13l5 5L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }
 
-function Field({
+const icons: Record<string, () => ReactElement> = {
+  first: IconPerson,
+  last: IconPerson,
+  email: IconMail,
+  phone: IconPhone,
+};
+
+function validate(name: string, value: string): boolean {
+  const v = value.trim();
+  if (name === "email") return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  if (name === "phone") return v.replace(/\D/g, "").length >= 7;
+  return v.length > 0;
+}
+
+function FloatingField({
   name,
   label,
   type,
   required,
+  value,
+  onChange,
 }: {
   name: string;
   label: string;
   type: string;
   required?: boolean;
+  value: string;
+  onChange: (v: string) => void;
 }) {
+  const [focused, setFocused] = useState(false);
+  const [touched, setTouched] = useState(false);
+  const Icon = icons[name] ?? IconPerson;
+  const isValid = validate(name, value);
+  const floated = focused || value.length > 0;
+  const showError = touched && !focused && required && !isValid && value.length === 0;
+  const showInvalid = touched && !focused && value.length > 0 && !isValid;
+
   return (
-    <div>
-      <label className="mb-1.5 block text-sm font-medium text-ink-2">
-        {label} {required && <span className="text-brand-600">*</span>}
-      </label>
-      <input
-        type={type}
-        name={name}
-        required={required}
-        className="w-full min-h-[44px] rounded-sm border border-border bg-white px-4 py-3 text-ink outline-none transition-colors focus:border-brand-500"
+    <div className="relative">
+      <div
+        className={`flex items-center gap-2.5 rounded-xl border bg-white px-4 pb-2 pt-5 transition-colors duration-200 ${
+          showError || showInvalid
+            ? "border-red-300"
+            : focused
+              ? "border-brand-500"
+              : "border-border"
+        }`}
+      >
+        <span
+          className={`shrink-0 transition-colors duration-200 ${
+            focused ? "text-brand-600" : "text-ink-2/50"
+          }`}
+        >
+          <Icon />
+        </span>
+        <div className="relative flex-1">
+          <label
+            htmlFor={name}
+            className={`pointer-events-none absolute left-0 origin-left transition-all duration-200 ${
+              floated
+                ? "-top-[1.15rem] text-[11px] font-semibold uppercase tracking-wide text-brand-600"
+                : "top-0 text-base text-ink-2"
+            }`}
+          >
+            {label} {required && <span className="text-brand-600">*</span>}
+          </label>
+          <input
+            id={name}
+            name={name}
+            type={type}
+            value={value}
+            required={required}
+            onChange={(e) => onChange(e.target.value)}
+            onFocus={() => setFocused(true)}
+            onBlur={() => {
+              setFocused(false);
+              setTouched(true);
+            }}
+            className="min-h-[28px] w-full bg-transparent text-ink outline-none"
+          />
+        </div>
+        <AnimatePresence>
+          {touched && isValid && (
+            <motion.span
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.5 }}
+              className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-500 text-white"
+            >
+              <IconCheck />
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </div>
+      {showError && (
+        <p className="mt-1 pl-1 text-xs font-medium text-red-500">{label} is required</p>
+      )}
+      {showInvalid && (
+        <p className="mt-1 pl-1 text-xs font-medium text-red-500">
+          {name === "email" ? "Enter a valid email address" : "Enter a valid phone number"}
+        </p>
+      )}
+    </div>
+  );
+}
+
+export default function ContactForm() {
+  const [values, setValues] = useState<Record<string, string>>({
+    first: "",
+    last: "",
+    email: "",
+    phone: "",
+  });
+  const [message, setMessage] = useState("");
+  const [messageFocused, setMessageFocused] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "done">("idle");
+
+  const set = (name: string) => (v: string) => setValues((prev) => ({ ...prev, [name]: v }));
+
+  const allValid = contact.form.fields
+    .filter((f) => f.required)
+    .every((f) => validate(f.name, values[f.name] ?? ""));
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    if (!allValid || status !== "idle") return;
+    setStatus("submitting");
+    setTimeout(() => setStatus("done"), 900);
+  }
+
+  const messageFloated = messageFocused || message.length > 0;
+
+  return (
+    <div className="relative mx-auto max-w-2xl overflow-hidden rounded-3xl bg-white p-6 shadow-xl ring-1 ring-black/5 sm:p-10">
+      <span
+        aria-hidden
+        className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-brand-500 via-brand-900 to-brand-500"
       />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-brand-100 blur-3xl"
+      />
+
+      <AnimatePresence mode="wait">
+        {status === "done" ? (
+          <motion.div
+            key="done"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="relative flex flex-col items-center gap-4 py-12 text-center"
+          >
+            <motion.span
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15, delay: 0.1 }}
+              className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-500 text-white"
+            >
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                <path d="M5 13l5 5L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </motion.span>
+            <h3 className="text-xl font-semibold text-brand-900">Message sent</h3>
+            <p role="status" className="max-w-sm text-ink-2">
+              Thanks — your message has been received. We&apos;ll be in touch soon.
+            </p>
+          </motion.div>
+        ) : (
+          <motion.form
+            key="form"
+            exit={{ opacity: 0, y: -10 }}
+            onSubmit={handleSubmit}
+            className="relative space-y-6"
+          >
+            <div className="grid grid-cols-1 gap-x-5 gap-y-6 sm:grid-cols-2">
+              {contact.form.fields.map((f) => (
+                <FloatingField
+                  key={f.name}
+                  name={f.name}
+                  label={f.label}
+                  type={f.type}
+                  required={f.required}
+                  value={values[f.name] ?? ""}
+                  onChange={set(f.name)}
+                />
+              ))}
+            </div>
+
+            <div className="relative rounded-xl border border-border bg-white px-4 pb-2 pt-5 transition-colors duration-200 focus-within:border-brand-500">
+              <span className="pointer-events-none absolute left-4 top-5 text-ink-2/50">
+                <IconMessage />
+              </span>
+              <label
+                htmlFor="your-message"
+                className={`pointer-events-none absolute left-11 origin-left transition-all duration-200 ${
+                  messageFloated
+                    ? "-top-[0.15rem] text-[11px] font-semibold uppercase tracking-wide text-brand-600"
+                    : "top-5 text-base text-ink-2"
+                }`}
+              >
+                {contact.form.message.label}
+              </label>
+              <textarea
+                id="your-message"
+                name={contact.form.message.name}
+                rows={5}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                onFocus={() => setMessageFocused(true)}
+                onBlur={() => setMessageFocused(false)}
+                className="w-full resize-none bg-transparent pl-7 text-ink outline-none"
+              />
+              <span className="pointer-events-none absolute bottom-2 right-3 text-[11px] text-ink-2/40">
+                {message.length} characters
+              </span>
+            </div>
+
+            <button
+              type="submit"
+              disabled={!allValid || status === "submitting"}
+              className="group relative flex min-h-[48px] w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-brand-900 px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 enabled:hover:bg-brand-600 enabled:hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
+            >
+              {status === "submitting" ? (
+                <>
+                  <motion.span
+                    animate={{ rotate: 360 }}
+                    transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
+                    className="h-4 w-4 rounded-full border-2 border-white/40 border-t-white"
+                  />
+                  Sending…
+                </>
+              ) : (
+                <>
+                  {contact.form.submitLabel}
+                  <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </>
+              )}
+            </button>
+          </motion.form>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

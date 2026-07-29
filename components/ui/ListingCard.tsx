@@ -11,7 +11,7 @@ export default function ListingCard({ listing }: { listing: Listing }) {
         hidden: { opacity: 0, y: 28 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } },
       }}
-      className="group flex flex-col overflow-hidden rounded-sm bg-white shadow-sm ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-900/20"
+      className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-900/20"
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface">
         <Image
@@ -35,7 +35,7 @@ export default function ListingCard({ listing }: { listing: Listing }) {
           href={listing.listingUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-flex min-h-[44px] items-center justify-center rounded-sm bg-brand-900 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-brand-600 hover:-translate-y-0.5"
+          className="mt-4 inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-900 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-brand-600 hover:-translate-y-0.5"
         >
           View Property
         </a>

@@ -52,14 +52,8 @@ export default function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    if (open) {
-      window.__lenis?.stop();
-    } else {
-      window.__lenis?.start();
-    }
     return () => {
       document.body.style.overflow = "";
-      window.__lenis?.start();
     };
   }, [open]);
 

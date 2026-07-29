@@ -3,7 +3,6 @@ import { Kreon, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SmoothScroll from "@/components/SmoothScroll";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 
 const kreon = Kreon({
@@ -41,7 +40,6 @@ export default function RootLayout({
       className={`${kreon.variable} ${openSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col overflow-x-hidden">
-        <SmoothScroll />
         <ScrollProgress />
         <a
           href="#main-content"

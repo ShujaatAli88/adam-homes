@@ -2,15 +2,9 @@ import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import Reveal from "@/components/ui/Reveal";
 import ServiceBlocks from "@/components/ui/ServiceBlocks";
-import Lightbox from "@/components/ui/Lightbox";
 import RelatedSidebar from "@/components/ui/RelatedSidebar";
-import {
-  gallery,
-  hero,
-  relatedProjects,
-  services,
-  socialGallery,
-} from "@/data/land-maintenance";
+import AngledDivider from "@/components/ui/AngledDivider";
+import { hero, relatedProjects, services, socialGallery } from "@/data/land-maintenance";
 
 export const metadata: Metadata = {
   title: "Land Maintenance and Management",
@@ -26,8 +20,12 @@ export default function LandMaintenancePage() {
         crumb="Home / Land Maintenance and Management"
       />
 
-      <section className="bg-white px-5 py-16 sm:py-24">
-        <div className="mx-auto max-w-4xl text-center">
+      <section className="relative overflow-hidden bg-white px-5 py-16 sm:py-24">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-brand-100 blur-3xl"
+        />
+        <div className="relative mx-auto max-w-4xl text-center">
           <Reveal>
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-brand-600">
               {hero.eyebrow}
@@ -42,17 +40,12 @@ export default function LandMaintenancePage() {
         </div>
       </section>
 
-      <section className="bg-surface-2 px-5 py-16 sm:py-24">
+      <section className="relative bg-surface-2 px-5 pb-16 pt-16 sm:pb-24 sm:pt-24">
         <ServiceBlocks services={services} />
+        <AngledDivider fill="#ffffff" />
       </section>
 
-      <section className="bg-white px-5 py-16 sm:py-24">
-        <div className="mx-auto max-w-[1400px]">
-          <Lightbox images={gallery} />
-        </div>
-      </section>
-
-      <section className="bg-surface-2 px-5 py-16 sm:py-20">
+      <section className="bg-white px-5 py-16 sm:py-20">
         <div className="mx-auto max-w-[1400px]">
           <RelatedSidebar
             relatedProjects={relatedProjects}
