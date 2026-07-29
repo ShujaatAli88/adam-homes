@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
-import CardLink from "@/components/ui/CardLink";
+import CardTrack from "@/components/ui/CardTrack";
 import HeroParallax from "@/components/ui/HeroParallax";
 import Grain from "@/components/ui/Grain";
-import GhostText from "@/components/ui/GhostText";
-import AngledDivider from "@/components/ui/AngledDivider";
+import CardIcon from "@/components/ui/CardIcon";
+import InteractiveLandTitle from "@/components/ui/InteractiveLandTitle";
 import Marquee from "@/components/ui/Marquee";
-import Reveal, { RevealGroup } from "@/components/ui/Reveal";
+import Reveal from "@/components/ui/Reveal";
 import {
   heroIntro,
   heroVideo,
@@ -14,6 +14,13 @@ import {
   homeServiceCards,
   passionText,
 } from "@/data/home";
+import { site } from "@/data/site";
+
+const credibilityBadges = [
+  site.veteranBadge,
+  "Licensed & Insured Land Realtor",
+  "Full-Service Land Management",
+];
 
 export default function Home() {
   return (
@@ -36,22 +43,10 @@ export default function Home() {
             </div>
           </Reveal>
         </div>
-
-        <div
-          aria-hidden
-          className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-white/80"
-        >
-          <span className="text-[10px] font-semibold uppercase tracking-[0.25em] drop-shadow">
-            Scroll
-          </span>
-          <span className="flex h-9 w-5 items-start justify-center rounded-full border border-white/60 pt-1.5">
-            <span className="h-1.5 w-1 animate-bounce rounded-full bg-white" />
-          </span>
-        </div>
       </section>
 
       {/* LAND IS WHAT WE DO */}
-      <section className="relative overflow-hidden bg-white px-5 pb-20 pt-20 sm:pb-24 sm:pt-28">
+      <section className="relative overflow-hidden bg-white px-5 pb-10 pt-12 sm:pb-14 sm:pt-16">
         <div
           aria-hidden
           className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-brand-100 blur-3xl"
@@ -60,45 +55,77 @@ export default function Home() {
           aria-hidden
           className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-surface-2 blur-3xl"
         />
-        <div className="relative mx-auto grid max-w-5xl grid-cols-1 items-center gap-8 sm:grid-cols-[auto_1fr]">
-          <Reveal className="relative flex flex-col items-start">
-            <GhostText>LAND</GhostText>
-            <span className="mb-3 h-px w-14 bg-brand-500" />
-            <h1 className="relative text-[clamp(3rem,12vw,7.5rem)] font-semibold leading-[0.85] text-brand-900">
-              {heroIntro.eyebrow}
-            </h1>
+
+        <div className="relative mx-auto max-w-5xl">
+          <Reveal className="relative mb-4 sm:mb-6">
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">
+              West Alabama Land Specialists
+            </span>
           </Reveal>
-          <Reveal delay={0.15} className="relative sm:pl-6 sm:pt-10">
-            <h2 className="text-[clamp(1.4rem,3.6vw,2.25rem)] font-semibold leading-tight text-brand-600">
-              {heroIntro.headline}
-            </h2>
+
+          <div className="relative grid grid-cols-1 items-center gap-8 sm:grid-cols-[auto_1fr]">
+            <Reveal delay={0.05} className="relative flex flex-col items-start">
+              <InteractiveLandTitle text={heroIntro.eyebrow} image="/images/hero-poster.jpg" />
+            </Reveal>
+            <Reveal delay={0.15} className="relative sm:pl-6 sm:pt-10">
+              <h2 className="text-[clamp(1.4rem,3.6vw,2.25rem)] font-semibold leading-tight text-brand-600">
+                {heroIntro.headline}
+              </h2>
+            </Reveal>
+          </div>
+
+          <Reveal delay={0.25} className="relative mt-10 flex flex-wrap gap-2.5 sm:mt-14">
+            {credibilityBadges.map((label) => (
+              <span
+                key={label}
+                className="cursor-default rounded-full border border-brand-500/25 bg-brand-100/70 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-brand-900 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-brand-900 hover:bg-brand-900 hover:text-white hover:shadow-[0_10px_24px_-8px_rgba(31,49,41,0.45)]"
+              >
+                {label}
+              </span>
+            ))}
           </Reveal>
         </div>
-        <AngledDivider fill="var(--color-brand-950)" />
       </section>
 
       {/* Passion band - real photo backdrop instead of a flat color panel */}
-      <section className="relative overflow-hidden px-5 pb-20 pt-4 sm:pb-24 sm:pt-6">
+      <section className="relative overflow-hidden px-5 pb-24 pt-16 sm:pb-28 sm:pt-20">
         <Image
           src="/images/hero-poster.jpg"
           alt=""
           fill
           sizes="100vw"
-          className="object-cover"
+          className="object-cover will-change-transform motion-safe:animate-kenburns"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-950/90 via-brand-950/80 to-brand-950/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-950/92 via-brand-950/72 to-brand-950/95" />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(ellipse at center, transparent 35%, rgba(19,18,16,0.55) 100%)",
+          }}
+        />
         <Grain />
+
         <Reveal className="relative mx-auto max-w-4xl">
-          <span
-            aria-hidden
-            className="font-display block text-[5rem] leading-none text-brand-500/60 sm:text-[7rem]"
-          >
-            &ldquo;
+          <span aria-hidden className="relative mb-4 block h-16 sm:h-20">
+            <span className="absolute -left-2 -top-6 h-24 w-24 rounded-full bg-brand-500/25 blur-2xl sm:h-32 sm:w-32" />
+            <span className="font-display relative block text-[5.5rem] leading-none text-brand-500 drop-shadow-[0_8px_24px_rgba(101,188,123,0.35)] sm:text-[7.5rem]">
+              &ldquo;
+            </span>
           </span>
+
           <div className="border-l-2 border-brand-500 pl-6 sm:pl-10">
-            <p className="text-[clamp(1.05rem,2.2vw,1.5rem)] font-light leading-relaxed text-white/95">
+            <p className="font-display text-[clamp(1.2rem,2.6vw,1.75rem)] italic font-light leading-relaxed text-white/95">
               {passionText}
             </p>
+          </div>
+
+          <div className="mt-9 flex items-center gap-4 pl-6 sm:pl-10">
+            <span aria-hidden className="h-px w-12 bg-gradient-to-r from-brand-500 to-transparent" />
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-500">
+              {site.name}
+            </span>
           </div>
         </Reveal>
       </section>
@@ -106,68 +133,62 @@ export default function Home() {
       <Marquee items={homeServiceCards.map((c) => c.title)} />
 
       {/* Services */}
-      <section className="relative overflow-hidden bg-brand-950 px-5 pb-20 pt-16 sm:pb-24 sm:pt-20">
-        <Grain />
+      <section className="relative overflow-hidden bg-white px-5 pb-16 pt-16 sm:pb-20 sm:pt-20">
         <div className="relative mx-auto max-w-[1200px]">
           <Reveal className="relative text-center">
-            <GhostText light>Services</GhostText>
-            <p className="relative mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
+            <p className="relative mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">
               What We Do
             </p>
-            <h2 className="relative text-[clamp(1.9rem,5vw,3rem)] font-semibold text-white">
+            <h2 className="relative text-[clamp(1.9rem,5vw,3rem)] font-semibold text-brand-900">
               Services
             </h2>
           </Reveal>
 
-          <RevealGroup className="relative mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">
-            {homeServiceCards.map((card, i) => (
-              <CardLink
-                key={card.title}
-                href={card.href}
-                img={card.img}
-                alt={card.alt}
-                title={card.title}
-                index={i}
-              />
-            ))}
-          </RevealGroup>
+          <div className="relative mt-12">
+            <CardTrack cards={homeServiceCards} />
+          </div>
         </div>
-        <AngledDivider fill="var(--color-charcoal)" flip />
       </section>
 
+      {/* Divider marking the handoff from Services to Projects */}
+      <div className="relative flex items-center justify-center bg-white py-2">
+        <span
+          aria-hidden
+          className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-brand-500/50 to-transparent"
+        />
+        <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-brand-500/30 bg-brand-900 text-white shadow-[0_10px_30px_-10px_rgba(31,49,41,0.55)]">
+          <CardIcon name="sapling" />
+        </span>
+      </div>
+
       {/* Projects */}
-      <section className="relative overflow-hidden bg-charcoal px-5 pb-24 pt-4 sm:pb-28 sm:pt-6">
-        <Grain />
+      <section className="relative overflow-hidden bg-white px-5 pb-24 pt-4 sm:pb-28 sm:pt-6">
         <div className="relative mx-auto max-w-[1200px]">
           <Reveal className="relative text-center">
-            <GhostText light>Projects</GhostText>
-            <p className="relative mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
+            <p className="relative mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">
               Our Work
             </p>
-            <h2 className="relative text-[clamp(1.9rem,5vw,3rem)] font-semibold text-white">
+            <h2 className="relative text-[clamp(1.9rem,5vw,3rem)] font-semibold text-brand-900">
               Projects
             </h2>
           </Reveal>
 
-          <RevealGroup className="relative mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">
-            {homeProjectCards.map((card, i) => (
-              <CardLink
-                key={card.title}
-                href={card.href}
-                img={card.img}
-                alt={card.alt}
-                title={card.title}
-                index={i}
-              />
-            ))}
-          </RevealGroup>
-        </div>
-
-        <div className="relative mt-16 sm:mt-20">
-          <span aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-500 to-transparent" />
-          <AngledDivider fill="var(--color-charcoal-950)" />
+          <div className="relative mt-12">
+            <CardTrack cards={homeProjectCards} />
+          </div>
         </div>
       </section>
+
+      {/* Divider marking the handoff from Projects to the footer */}
+      <div className="relative flex items-center justify-center bg-white py-2">
+        <span
+          aria-hidden
+          className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-brand-500/50 to-transparent"
+        />
+        <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-brand-500/30 bg-brand-900 text-white shadow-[0_10px_30px_-10px_rgba(31,49,41,0.55)]">
+          <CardIcon name="camera" />
+        </span>
+      </div>
     </>
   );
 }

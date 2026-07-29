@@ -55,6 +55,7 @@
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   --animate-fade-in: fade-in 0.7s ease both;
   --animate-marquee: marquee 28s linear infinite;
+  --animate-kenburns: kenburns 22s ease-in-out infinite alternate;
 
   @keyframes marquee {
     from {
@@ -62,6 +63,14 @@
     }
     to {
       transform: translateX(-50%);
+    }
+  }
+  @keyframes kenburns {
+    from {
+      transform: scale(1.04) translate(0, 0);
+    }
+    to {
+      transform: scale(1.16) translate(-1%, -1%);
     }
   }
   @keyframes fade-up {
