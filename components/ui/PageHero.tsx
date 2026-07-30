@@ -1,6 +1,5 @@
 import Reveal from "./Reveal";
 import Grain from "./Grain";
-import GhostText from "./GhostText";
 import AngledDivider from "./AngledDivider";
 
 export default function PageHero({
@@ -19,7 +18,6 @@ export default function PageHero({
         className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.1),transparent_60%)]"
       />
       <Grain />
-      <GhostText light>{title}</GhostText>
       <Reveal className="relative">
         <span className="mx-auto mb-4 block h-px w-14 bg-brand-500" />
         <h1 className="text-[clamp(2.1rem,5vw,3.5rem)] font-semibold">{title}</h1>
