@@ -12,7 +12,12 @@ export default function TwistedPinePage() {
   const project = projects.find((p) => p.slug === "twisted-pine")!;
   return (
     <>
-      <PageHero title={project.title} crumb="Home / Twisted Pine" />
+      <PageHero
+        title={project.title}
+        crumb="Home / Twisted Pine"
+        bgImage="/images/background_image.png"
+        titleTone="dark"
+      />
       <section className="bg-white px-5 py-16 sm:py-24">
         <div className="mx-auto max-w-[1400px]">
           <ProjectGallery sections={project.sections} />

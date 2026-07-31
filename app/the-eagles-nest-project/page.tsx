@@ -12,7 +12,12 @@ export default function EaglesNestPage() {
   const project = projects.find((p) => p.slug === "eagles-nest")!;
   return (
     <>
-      <PageHero title={project.title} crumb="Home / The Eagle's Nest Project" />
+      <PageHero
+        title={project.title}
+        crumb="Home / The Eagle's Nest Project"
+        bgImage="/images/background_image.png"
+        titleTone="dark"
+      />
       <section className="bg-white px-5 py-16 sm:py-24">
         <div className="mx-auto max-w-[1400px]">
           <ProjectGallery sections={project.sections} />

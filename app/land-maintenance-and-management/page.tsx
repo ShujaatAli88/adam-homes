@@ -18,6 +18,8 @@ export default function LandMaintenancePage() {
       <PageHero
         title="Land Maintenance and Management"
         crumb="Home / Land Maintenance and Management"
+        bgImage="/images/background_image.png"
+        titleTone="dark"
       />
 
       <section className="relative overflow-hidden bg-white px-5 py-16 sm:py-24">

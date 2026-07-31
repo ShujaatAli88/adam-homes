@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function GalleryPhotosPage() {
   return (
     <>
-      <PageHero title="Gallery Photos" crumb="Home / Gallery Photos" />
+      <PageHero title="Gallery Photos" crumb="Home / Gallery Photos" bgImage="/images/background_image.png" titleTone="dark" />
       <section className="bg-white px-5 pt-16 text-center sm:pt-20">
         <Reveal className="mx-auto max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-brand-600">

@@ -4,7 +4,7 @@ import CardTrack from "@/components/ui/CardTrack";
 import HeroParallax from "@/components/ui/HeroParallax";
 import Grain from "@/components/ui/Grain";
 import CardIcon from "@/components/ui/CardIcon";
-import InteractiveLandTitle from "@/components/ui/InteractiveLandTitle";
+import PhotoText from "@/components/ui/PhotoText";
 import Marquee from "@/components/ui/Marquee";
 import Reveal from "@/components/ui/Reveal";
 import {
@@ -34,10 +34,10 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-center gap-10 px-5 text-center">
           <Reveal>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
-              <Button href={heroIntro.buttons[0].href} variant="secondary">
+              <Button href={heroIntro.buttons[0].href} variant="outline" showArrow={false}>
                 {heroIntro.buttons[0].label}
               </Button>
-              <Button href={heroIntro.buttons[1].href} variant="outline">
+              <Button href={heroIntro.buttons[1].href} variant="outline" showArrow={false}>
                 {heroIntro.buttons[1].label}
               </Button>
             </div>
@@ -65,7 +65,14 @@ export default function Home() {
 
           <div className="relative grid grid-cols-1 items-center gap-8 sm:grid-cols-[auto_1fr]">
             <Reveal delay={0.05} className="relative flex flex-col items-start">
-              <InteractiveLandTitle text={heroIntro.eyebrow} image="/images/hero-poster.jpg" />
+              <PhotoText
+                text={heroIntro.eyebrow}
+                image="/images/background_image.png"
+                tone="light"
+                basePosition={{ x: 50, y: 50 }}
+                backgroundSize="cover"
+                className="text-[clamp(3rem,12vw,7.5rem)] font-semibold leading-[0.85] tracking-tight"
+              />
             </Reveal>
             <Reveal delay={0.15} className="relative sm:pl-6 sm:pt-10">
               <h2 className="text-[clamp(1.4rem,3.6vw,2.25rem)] font-semibold leading-tight text-brand-600">
@@ -90,7 +97,7 @@ export default function Home() {
       {/* Passion band - real photo backdrop instead of a flat color panel */}
       <section className="relative overflow-hidden px-5 pb-24 pt-16 sm:pb-28 sm:pt-20">
         <Image
-          src="/images/hero-poster.jpg"
+          src="/images/forest.jpg"
           alt=""
           fill
           sizes="100vw"
@@ -139,7 +146,7 @@ export default function Home() {
             <p className="relative mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">
               What We Do
             </p>
-            <h2 className="relative text-[clamp(1.9rem,5vw,3rem)] font-semibold text-brand-900">
+            <h2 className="relative inline-block text-[clamp(1.9rem,5vw,3rem)] font-semibold text-brand-600">
               Services
             </h2>
           </Reveal>
@@ -168,7 +175,7 @@ export default function Home() {
             <p className="relative mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">
               Our Work
             </p>
-            <h2 className="relative text-[clamp(1.9rem,5vw,3rem)] font-semibold text-brand-900">
+            <h2 className="relative inline-block text-[clamp(1.9rem,5vw,3rem)] font-semibold text-brand-600">
               Projects
             </h2>
           </Reveal>

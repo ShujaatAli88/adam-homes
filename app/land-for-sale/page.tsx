@@ -25,6 +25,7 @@ export default function LandForSalePage() {
         title="Land for Sale"
         crumb="Home / Land for Sale"
         dividerFill="var(--color-surface-2)"
+        bgImage="/images/background_image.png"
       />
       <section className="bg-surface-2 px-5 py-16 sm:py-24">
         <div className="mx-auto max-w-[1400px]">

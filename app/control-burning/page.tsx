@@ -15,7 +15,12 @@ export const metadata: Metadata = {
 export default function ControlBurningPage() {
   return (
     <>
-      <PageHero title="Control Burning" crumb="Home / Control Burning" />
+      <PageHero
+        title="Control Burning"
+        crumb="Home / Control Burning"
+        bgImage="/images/background_image.png"
+        titleTone="dark"
+      />
 
       <section className="relative overflow-hidden bg-white px-5 pb-16 pt-16 sm:pb-24 sm:pt-24">
         <div

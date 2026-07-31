@@ -22,7 +22,12 @@ export default function ServiceDetailPage({
 }) {
   return (
     <>
-      <PageHero title={title} crumb={crumb} />
+      <PageHero
+        title={title}
+        crumb={crumb}
+        bgImage="/images/background_image.png"
+        titleTone="dark"
+      />
 
       <section className="relative overflow-hidden bg-white px-5 pb-16 pt-16 sm:pb-24 sm:pt-24">
         <div

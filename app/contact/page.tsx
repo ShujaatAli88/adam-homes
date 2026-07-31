@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHero title="Contact" crumb="Home / Contact" />
+      <PageHero title="Contact" crumb="Home / Contact" image="/images/hero-poster.jpg" />
       <section className="bg-white px-5 py-16 text-center sm:py-20">
         <Reveal>
           <h2 className="mb-8 text-[clamp(1.5rem,4vw,2.25rem)] font-semibold text-brand-900">

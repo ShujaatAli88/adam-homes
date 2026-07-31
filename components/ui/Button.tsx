@@ -12,6 +12,7 @@ type ButtonProps = {
   className?: string;
   target?: string;
   rel?: string;
+  showArrow?: boolean;
 };
 
 const base =
@@ -42,6 +43,7 @@ export default function Button({
   className,
   target,
   rel,
+  showArrow = true,
 }: ButtonProps) {
   const ref = useRef<HTMLAnchorElement>(null);
   const x = useMotionValue(0);
@@ -88,15 +90,17 @@ export default function Button({
         >
           {children}
         </span>
-        <span
-          aria-hidden
-          className={clsx(
-            "relative z-10 inline-block transition-transform duration-300 group-hover:translate-x-1",
-            hoverTextVariants[variant]
-          )}
-        >
-          →
-        </span>
+        {showArrow && (
+          <span
+            aria-hidden
+            className={clsx(
+              "relative z-10 inline-block transition-transform duration-300 group-hover:translate-x-1",
+              hoverTextVariants[variant]
+            )}
+          >
+            →
+          </span>
+        )}
       </Link>
     </motion.div>
   );

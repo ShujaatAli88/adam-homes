@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHero title="Meet Adam Aderholt" crumb="Home / About" />
+      <PageHero title="Meet Adam Aderholt" crumb="Home / About" image="/images/hero-poster.jpg" />
 
       {/* Profile intro */}
       <section className="relative overflow-hidden bg-white px-5 pb-16 pt-16 sm:pb-24 sm:pt-24">

@@ -12,7 +12,12 @@ export default function BrownTractPage() {
   const project = projects.find((p) => p.slug === "brown-tract")!;
   return (
     <>
-      <PageHero title={project.title} crumb="Home / Brown Tract Project" />
+      <PageHero
+        title={project.title}
+        crumb="Home / Brown Tract Project"
+        bgImage="/images/background_image.png"
+        titleTone="dark"
+      />
       <section className="bg-white px-5 py-16 sm:py-24">
         <div className="mx-auto max-w-[1400px]">
           <ProjectGallery sections={project.sections} />
