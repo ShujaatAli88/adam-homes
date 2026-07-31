@@ -1,6 +1,6 @@
 // Listing photos are downloaded to /public/media/listings/, one per slug,
 // sourced from the matching National Land Realty listing page.
-export type ListingStatus = "active" | "sold";
+export type ListingStatus = "active" | "sold" | "under-contract";
 
 export type Listing = {
   status: ListingStatus;
@@ -146,7 +146,7 @@ export const listings: Listing[] = [
     listingUrl: "https://nationalland.com/listing/willis-ridge-secluded-home-sites-with-views"
   },
   {
-    status: "active",
+    status: "under-contract",
     title: "Sawyerville - Homestead & Hunting Tract",
     county: "Hale County, AL",
     acres: "30 +/- Acres",

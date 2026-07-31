@@ -104,6 +104,10 @@ export const nav: NavItem[] = [
     ]
   },
   {
+    "label": "ABOUT",
+    "href": "/about"
+  },
+  {
     "label": "CONTACT",
     "href": "/contact"
   }

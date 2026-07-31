@@ -15,7 +15,7 @@ function priceValue(price: string) {
 
 export default function LandForSalePage() {
   const activeListings = listings
-    .filter((listing) => listing.status === "active")
+    .filter((listing) => listing.status !== "sold")
     .sort((a, b) => priceValue(b.price) - priceValue(a.price));
   const soldListings = listings.filter((listing) => listing.status === "sold");
 

@@ -27,6 +27,10 @@ export default function ListingCard({ listing }: { listing: Listing }) {
           <div className="absolute left-4 top-4 rounded-full bg-charcoal/90 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-white shadow">
             Sold
           </div>
+        ) : listing.status === "under-contract" ? (
+          <div className="absolute left-4 top-4 rounded-full bg-amber-600/95 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-white shadow">
+            Under Contract
+          </div>
         ) : (
           <div className="absolute left-4 top-4 rounded-full bg-brand-900/90 px-4 py-1.5 text-sm font-semibold text-white shadow">
             {listing.price}
@@ -41,6 +45,7 @@ export default function ListingCard({ listing }: { listing: Listing }) {
         <p className="text-sm text-ink-2">
           {listing.acres}
           {listing.status === "sold" ? ` — Sold for ${listing.price}` : ""}
+          {listing.status === "under-contract" ? ` — Listed at ${listing.price}` : ""}
         </p>
         <a
           href={listing.listingUrl}
