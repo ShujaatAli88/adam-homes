@@ -16,21 +16,32 @@ export default function ListingCard({ listing }: { listing: Listing }) {
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface">
         <Image
           src={listing.img}
-          alt={`${listing.acres}`}
+          alt={listing.title}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+          className={`object-cover transition-transform duration-700 ease-out group-hover:scale-110 ${
+            listing.status === "sold" ? "grayscale-[35%]" : ""
+          }`}
         />
-        <div className="absolute left-4 top-4 rounded-full bg-brand-900/90 px-4 py-1.5 text-sm font-semibold text-white shadow">
-          {listing.price}
-        </div>
+        {listing.status === "sold" ? (
+          <div className="absolute left-4 top-4 rounded-full bg-charcoal/90 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-white shadow">
+            Sold
+          </div>
+        ) : (
+          <div className="absolute left-4 top-4 rounded-full bg-brand-900/90 px-4 py-1.5 text-sm font-semibold text-white shadow">
+            {listing.price}
+          </div>
+        )}
       </div>
       <div className="flex flex-1 flex-col gap-1 p-6">
         <p className="text-xs font-semibold uppercase tracking-wide text-brand-600">
           {listing.county}
         </p>
-        <h3 className="text-xl font-semibold text-ink">{listing.acres}..</h3>
-        <p className="text-sm text-ink-2">{listing.acres}</p>
+        <h3 className="text-xl font-semibold text-ink">{listing.title}</h3>
+        <p className="text-sm text-ink-2">
+          {listing.acres}
+          {listing.status === "sold" ? ` — Sold for ${listing.price}` : ""}
+        </p>
         <a
           href={listing.listingUrl}
           target="_blank"

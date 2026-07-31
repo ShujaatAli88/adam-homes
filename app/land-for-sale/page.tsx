@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
-import ListingCard from "@/components/ui/ListingCard";
-import { RevealGroup } from "@/components/ui/Reveal";
+import ListingsTabs from "@/components/ui/ListingsTabs";
 import { listings } from "@/data/listings";
 
 export const metadata: Metadata = {
@@ -10,7 +9,16 @@ export const metadata: Metadata = {
     "West Alabama Land for Sale | Large Property Lots, Acreages for Hunting, Fishing, and Development",
 };
 
+function priceValue(price: string) {
+  return Number(price.replace(/[^0-9.]/g, "")) || 0;
+}
+
 export default function LandForSalePage() {
+  const activeListings = listings
+    .filter((listing) => listing.status === "active")
+    .sort((a, b) => priceValue(b.price) - priceValue(a.price));
+  const soldListings = listings.filter((listing) => listing.status === "sold");
+
   return (
     <>
       <PageHero
@@ -20,11 +28,7 @@ export default function LandForSalePage() {
       />
       <section className="bg-surface-2 px-5 py-16 sm:py-24">
         <div className="mx-auto max-w-[1400px]">
-          <RevealGroup className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {listings.map((listing) => (
-              <ListingCard key={listing.slug} listing={listing} />
-            ))}
-          </RevealGroup>
+          <ListingsTabs active={activeListings} sold={soldListings} />
         </div>
       </section>
     </>
