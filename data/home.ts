@@ -17,7 +17,7 @@ export const passionText =
 export const homeServiceCards: HomeCard[] = [
   {
     "title": "Road Construction",
-    "href": "/land-maintenance-and-management",
+    "href": "/road-construction",
     "img": "/images/home/services/Waterline-Install-Tuscaloosa-County-b.jpg",
     "alt": "Waterline Install Tuscaloosa County b",
     "description": "From private access lanes to estate roads, we build durable, code-compliant land access for every property.",
@@ -41,7 +41,7 @@ export const homeServiceCards: HomeCard[] = [
   },
   {
     "title": "Septic Tank & Waterlines",
-    "href": "/land-maintenance-and-management",
+    "href": "/septic-tank-and-waterlines",
     "img": "/images/home/services/Waterline-Install-Bibb-county.jpeg",
     "alt": "Waterline Install Bibb county",
     "description": "Complete septic and waterline service for rural homes, cabins, and remote recreational properties.",
@@ -49,7 +49,7 @@ export const homeServiceCards: HomeCard[] = [
   },
   {
     "title": "Home Site Preparation / Hunting Lodge",
-    "href": "/land-maintenance-and-management",
+    "href": "/home-site-preparation",
     "img": "/images/home/services/Food-Plot-Design-and-Construction-Tuscaloosa-county.jpeg",
     "alt": "Food Plot Design and Construction Tuscaloosa county",
     "description": "Site planning, clearing, and grading for cabins, lodges, long-term hunting camps, and family retreats.",
@@ -57,7 +57,7 @@ export const homeServiceCards: HomeCard[] = [
   },
   {
     "title": "Silviculture Consulting",
-    "href": "/land-maintenance-and-management",
+    "href": "/silviculture-consulting",
     "img": "/images/home/services/Timber-Consulting-Services-Lamar-county.jpeg",
     "alt": "Timber Consulting Services Lamar county",
     "description": "Forest health guidance, regeneration planning, and timber market strategy for productive stands.",

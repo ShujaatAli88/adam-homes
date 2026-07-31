@@ -14,22 +14,34 @@ export type LightboxImage = { src: string; alt: string };
 // plain CSS transitions, none of the per-item JS animation overhead.
 const MOTION_THRESHOLD = 30;
 
+// In the bento variant, every 6th tile (starting with the first) is doubled
+// in both directions to break up the rhythm of an otherwise uniform grid.
+function bentoClass(index: number) {
+  return index % 6 === 0
+    ? "col-span-2 row-span-2"
+    : "col-span-1 row-span-1";
+}
+
 function GridCard({
   img,
   index,
   total,
   onOpen,
+  bento = false,
 }: {
   img: LightboxImage;
   index: number;
   total: number;
   onOpen: () => void;
+  bento?: boolean;
 }) {
   return (
     <button
       type="button"
       onClick={onOpen}
-      className="group relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-surface text-left shadow-sm ring-1 ring-black/5 transition-all duration-400 ease-out hover:-translate-y-1 hover:shadow-xl hover:ring-brand-500/50"
+      className={`group relative w-full overflow-hidden rounded-xl bg-surface text-left shadow-sm ring-1 ring-black/5 transition-all duration-400 ease-out hover:-translate-y-1 hover:shadow-xl hover:ring-brand-500/50 ${
+        bento ? `h-full ${bentoClass(index)}` : "aspect-[4/3]"
+      }`}
       style={{ contentVisibility: "auto", containIntrinsicSize: "0 280px" }}
       aria-label={`Open image ${index + 1} of ${total}`}
     >
@@ -60,9 +72,11 @@ function GridCard({
 export default function Lightbox({
   images,
   columns = "sm:grid-cols-2 lg:grid-cols-3",
+  variant = "grid",
 }: {
   images: LightboxImage[];
   columns?: string;
+  variant?: "grid" | "bento";
 }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -94,7 +108,10 @@ export default function Lightbox({
 
   if (!images.length) return null;
 
-  const gridClass = `grid grid-cols-2 gap-3 sm:gap-5 ${columns}`;
+  const bento = variant === "bento";
+  const gridClass = bento
+    ? "grid grid-cols-2 auto-rows-[140px] gap-3 sm:auto-rows-[170px] sm:grid-cols-4 sm:gap-4"
+    : `grid grid-cols-2 gap-3 sm:gap-5 ${columns}`;
 
   return (
     <>
@@ -107,6 +124,7 @@ export default function Lightbox({
               index={i}
               total={images.length}
               onOpen={() => setActiveIndex(i)}
+              bento={bento}
             />
           ))}
         </div>
@@ -115,12 +133,13 @@ export default function Lightbox({
           {images.map((img, i) => (
             <motion.div
               key={img.src + i}
+              className={bento ? bentoClass(i) : undefined}
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
               }}
             >
-              <GridCard img={img} index={i} total={images.length} onOpen={() => setActiveIndex(i)} />
+              <GridCard img={img} index={i} total={images.length} onOpen={() => setActiveIndex(i)} bento={bento} />
             </motion.div>
           ))}
         </RevealGroup>

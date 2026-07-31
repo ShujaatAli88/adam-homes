@@ -66,6 +66,12 @@ export const services: ServiceBlock[] = [
   },
 ];
 
+// Named handles onto the blocks above, so individual service pages don't
+// need to reference `services` by magic array index.
+export const roadConstructionService = services[1];
+export const septicTankService = services[2];
+export const silvicultureService = services[3];
+
 export const relatedProjects = [
   {
     "label": "The Eagle's Nest",
