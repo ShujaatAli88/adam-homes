@@ -67,7 +67,7 @@ export default function Home() {
             <Reveal delay={0.05} className="relative flex flex-col items-start">
               <PhotoText
                 text={heroIntro.eyebrow}
-                image="/images/background_image.png"
+                image="/images/forest.jpg"
                 tone="light"
                 basePosition={{ x: 50, y: 50 }}
                 backgroundSize="cover"

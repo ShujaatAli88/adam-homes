@@ -1,64 +1,57 @@
+// COMPANY REWRITE (2026-08-04): this page previously framed Adam Aderholt as
+// a National Land Realty real-estate agent. Rewritten per client direction
+// to center High Ground Land Solutions as a land clearing / excavating /
+// land management company, with land sales as a secondary mention only.
+//
+// NEEDS CLIENT CONFIRMATION BEFORE THIS COPY SHIPS:
+//  - Year founded / years in operation - not stated anywhere in the existing
+//    site content, so no number has been invented. See the bracketed note
+//    in bio[2] below - it's written to render visibly on the page so it
+//    can't accidentally go live unedited.
+//  - Crew size / team headcount - not stated anywhere in the existing site
+//    content. Copy below stays generic ("our crew", "our own crew and
+//    equipment") rather than naming a number.
+//  - Service area - currently just "West Alabama", matching the existing
+//    site-wide footer tagline in data/site.ts. Confirm whether specific
+//    counties should be named instead.
 export const about = {
-  name: "Adam Aderholt",
-  role: "Land Professional & Associate Broker",
-  company: "National Land Realty — Tuscaloosa, AL",
+  companyName: "High Ground Land Solutions",
+  tagline: "Land Clearing, Excavating & Land Management",
+  serviceArea: "West Alabama",
+  ownerName: "Adam Aderholt",
+  ownerTitle: "Owner-Operator",
   photo: "/images/team/adam-aderholt.jpg",
-  veteranBadge: "U.S. Army Veteran",
+  veteranBadge: "Veteran-Owned & Operated",
 
   stats: [
-    { value: "15+", label: "Years in Real Estate" },
-    { value: "2020", label: "Joined National Land Realty" },
-    { value: "5.0", label: "Rating · 10 Reviews" },
+    { value: "Veteran-Owned", label: "& Operated" },
+    { value: "Licensed", label: "& Insured" },
+    { value: "West Alabama", label: "Service Area" },
   ],
 
   credentials: [
-    "B.S. Business Administration, The Citadel",
-    "U.S. Army Veteran — commissioned officer",
     "Certified Prescribed Burn Manager",
-    "Active Member, Realtors Land Institute (RLI)",
-    "Licensed Real Estate Agent, Alabama",
+    "U.S. Army Veteran — commissioned officer",
+    "B.S. Business Administration, The Citadel",
+    "Veteran-Owned & Operated Business",
   ],
 
-  specialties: [
-    "Commercial Properties",
-    "Agricultural Land",
-    "Recreational Land",
-    "Timberland",
-    "Conservation Properties",
+  services: [
+    "Prescribed Burning",
+    "Land Clearing & Road Construction",
+    "Septic Tank & Water Line Installation",
+    "High Fence & Property Management",
+    "Home Site & Hunting Lodge Prep",
     "Wildlife Habitat Improvement",
     "Pond Management",
-    "Site Reclamation",
   ],
 
-  // Verbatim from Adam's National Land Realty agent profile.
   bio: [
-    "Adam is an Associate Broker at National Land Realty, where he has been serving clients since 2020. With over fifteen years of experience in real estate brokerage, Adam brings extensive knowledge and expertise to his clientele.",
-    "An Alabama native, Adam grew up with a passion for the outdoors and a strong desire to help others buy and sell land. He earned a Bachelor of Science in Business Administration from The Citadel before commissioning into the United States Army, where he served in various roles across the U.S. and abroad.",
-    "Following his distinguished military service, Adam transitioned into the business sector, gaining experience across multiple industries, including serving as the managing member of a business valuation firm. For over a decade, he has focused his real estate career on the sale and acquisition of commercial, agricultural, recreational, timberland, and conservation properties. He is also well-versed in the tax advantages of owning, buying, or selling land.",
-    "Adam's clients range from business owners and investors to estates, trusts, and families pursuing their dream properties. He is an active member of Realtors Land Institute (RLI) and is a Certified Prescribed Burn Manager. His expertise extends to non-commercial horticulture, site reclamation, pond management, and wildlife habitat improvement.",
-    "Based out of National Land Realty's Tuscaloosa office, Adam also manages and develops properties throughout central Alabama. He is dedicated to helping his clients sell, acquire, and create their optimal properties.",
-    "Adam lives in Tuscaloosa, Alabama, with his two children, Shane and Savannah. Proud to be part of the National Land Realty team, he looks forward to helping you achieve your land goals.",
-  ],
-
-  testimonials: [
-    {
-      quote:
-        "Excellent experience with National Land Realty. Adam Aderholt was prompt, courteous and honest. If you are looking to buy or sell land, I highly recommend considering Adam and National Land Realty to work for you.",
-      name: "Mark S.",
-      date: "March 2021",
-    },
-    {
-      quote:
-        "Adam Aderholt was the absolute best from start to finish! He always followed up; provided his best guidance; patience; generosity & the most important to me was his honesty! I would recommend him to anyone that is purchasing land!",
-      name: "Kristen G.",
-      date: "November 2020",
-    },
-    {
-      quote:
-        "Adam Aderholt has been great to work with. Very knowledgeable about timber and land management in general. Highly recommend.",
-      name: "Kris D.",
-      date: "November 2020",
-    },
+    "High Ground Land Solutions is a full-service land clearing, excavating, and land management company based in Tuscaloosa, Alabama. We help landowners across West Alabama turn raw, overgrown, or hard-to-access acreage into productive, usable land — through prescribed burning, land clearing, road construction, septic and waterline installation, and hands-on property management.",
+    "The company is owned and operated by Adam Aderholt, a U.S. Army veteran and Citadel graduate who runs every project personally, from the first walk of the property to the final grade. Adam is a Certified Prescribed Burn Manager with hands-on experience operating the equipment his crew runs every day.",
+    "[CONFIRM WITH CLIENT: years in operation] High Ground Land Solutions has been serving West Alabama landowners for [X years] — every job is handled in-house by our own crew and equipment, with no subcontracting out the work that matters.",
+    "Beyond clearing and maintenance, High Ground also helps select clients buy and sell land — but land management is the core of the business, not a side effect of it.",
+    "Adam lives in Tuscaloosa, Alabama, with his two children, Shane and Savannah, and is proud to run a Veteran-owned, owner-operated business serving the land and people of West Alabama.",
   ],
 
   contact: {
@@ -66,7 +59,6 @@ export const about = {
     cellPhoneHref: "tel:+12054102699",
     officePhone: "(205) 606-5665",
     officePhoneHref: "tel:+12056065665",
-    profileUrl: "https://nationalland.com/real-estate-agent/adam-aderholt",
-    facebook: "https://www.facebook.com/AdamAderholtNLR",
+    facebook: "https://www.facebook.com/highgroundlandsolutions/",
   },
 };

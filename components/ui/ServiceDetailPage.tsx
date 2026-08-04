@@ -25,7 +25,7 @@ export default function ServiceDetailPage({
       <PageHero
         title={title}
         crumb={crumb}
-        bgImage="/images/background_image.png"
+        bgImage="/images/forest.jpg"
         titleTone="dark"
       />
 

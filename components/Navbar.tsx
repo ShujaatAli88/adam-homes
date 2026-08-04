@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
 import { nav, site } from "@/data/site";
 import { homeProjectCards } from "@/data/home";
+import CardIcon from "./ui/CardIcon";
 
 const projectThumbs: Record<string, string> = Object.fromEntries(
   homeProjectCards.map((c) => [c.href, c.img])
@@ -22,13 +23,6 @@ function IconTool() {
         strokeWidth="1.6"
         strokeLinejoin="round"
       />
-    </svg>
-  );
-}
-function IconFlame() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M12.5 2c.7 2.6 2.2 4.3 3.8 6.2 1.8 2.1 3.2 4.3 3.2 7.1a7.5 7.5 0 0 1-15 0c0-2.1.8-3.7 1.8-5.1.2 1.7 1 2.8 2.1 3.5-.4-2.8.4-5 2-6.9.1 1.5.7 2.5 1.6 3.3-.2-2.9.6-5.3-.5-8.1Zm-.5 11a2.5 2.5 0 0 0-2.5 2.5c0 1.4 1.1 2.5 2.5 2.5s2.5-1.1 2.5-2.5A2.5 2.5 0 0 0 12 13Z" />
     </svg>
   );
 }
@@ -73,8 +67,8 @@ export default function Navbar() {
               <Image
                 src={site.logo}
                 alt={`${site.name} Logo`}
-                width={160}
-                height={44}
+                width={640}
+                height={178}
                 priority
                 className={clsx(
                   "w-auto transition-all duration-500",
@@ -179,10 +173,10 @@ export default function Navbar() {
                 )}
 
                 {item.children && item.label === "SERVICES" && (
-                  <div className="invisible absolute right-0 top-full min-w-[280px] translate-y-3 pt-3 opacity-0 transition-all duration-300 ease-out group-hover:visible group-hover:translate-y-1 group-hover:opacity-100">
+                  <div className="invisible absolute right-0 top-full w-[460px] translate-y-3 pt-3 opacity-0 transition-all duration-300 ease-out group-hover:visible group-hover:translate-y-1 group-hover:opacity-100">
                     <div className="overflow-hidden rounded-2xl bg-white shadow-2xl shadow-black/20 ring-1 ring-black/5">
                       <span className="block h-[3px] w-full bg-gradient-to-r from-brand-500 via-brand-600 to-brand-500" />
-                      <ul className="p-2">
+                      <ul className="grid grid-cols-2 gap-1 p-3">
                         {item.children.map((child, ci) => (
                           <li key={child.label}>
                             <Link
@@ -191,9 +185,9 @@ export default function Navbar() {
                               style={{ transitionDelay: `${ci * 25}ms` }}
                             >
                               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-900 transition-colors duration-300 group-hover/item:bg-brand-900 group-hover/item:text-cream">
-                                {ci === 0 ? <IconTool /> : <IconFlame />}
+                                {child.icon ? <CardIcon name={child.icon} /> : <IconTool />}
                               </span>
-                              <span className="text-sm font-medium text-ink transition-colors group-hover/item:text-brand-900">
+                              <span className="text-sm font-medium leading-snug text-ink transition-colors group-hover/item:text-brand-900">
                                 {child.label}
                               </span>
                               <span
@@ -244,9 +238,9 @@ export default function Navbar() {
               <Image
                 src={site.logo}
                 alt={`${site.name} Logo`}
-                width={140}
-                height={38}
-                className="h-9 w-auto"
+                width={640}
+                height={178}
+                className="h-9 w-auto brightness-0 invert"
               />
               <button
                 type="button"

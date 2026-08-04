@@ -18,7 +18,7 @@ export default function LandMaintenancePage() {
       <PageHero
         title="Land Maintenance and Management"
         crumb="Home / Land Maintenance and Management"
-        bgImage="/images/background_image.png"
+        bgImage="/images/forest.jpg"
         titleTone="dark"
       />
 

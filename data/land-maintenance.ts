@@ -58,10 +58,15 @@ export const services: ServiceBlock[] = [
     ],
   },
   {
-    title: "Silviculture Consulting",
-    body: null,
+    // PLACEHOLDER: copy pending from client. Do not ship without replacing
+    // body text with real client-supplied content. Image below is a
+    // stand-in (not a real High Fence & Property Management photo) - client
+    // asked for a generic photo instead of the "pending" graphic; swap for
+    // the real photo once supplied.
+    title: "High Fence & Property Management",
+    body: "PLACEHOLDER COPY — pending from the client. Description of High Fence & Property Management services will go here once provided.",
     images: [
-      { src: "/images/land-maintenance/Land-Management-Hale-County.jpg", alt: "BEFORE: Brush Mowing, Tree Removal" },
+      { src: "/images/home/services/Timber-Consulting-Services-Lamar-county.jpeg", alt: "High Ground Land Solutions — property under management" },
     ],
   },
 ];
@@ -70,7 +75,7 @@ export const services: ServiceBlock[] = [
 // need to reference `services` by magic array index.
 export const roadConstructionService = services[1];
 export const septicTankService = services[2];
-export const silvicultureService = services[3];
+export const highFenceService = services[3];
 
 export const relatedProjects = [
   {

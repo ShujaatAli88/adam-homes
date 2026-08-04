@@ -99,9 +99,9 @@ export default function Footer() {
             <Image
               src={site.logo}
               alt={`${site.name} Logo`}
-              width={240}
-              height={104}
-              className="h-14 w-auto"
+              width={640}
+              height={178}
+              className="h-14 w-auto brightness-0 invert"
             />
           </Link>
 

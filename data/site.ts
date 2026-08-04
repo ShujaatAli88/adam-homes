@@ -1,6 +1,6 @@
 export const site = {
   "name": "High Ground Land Solutions",
-  "logo": "/images/logo.png",
+  "logo": "/images/logo-v2.png",
   "favicon": "/favicon.png",
   "email": "adam@highgroundland.com",
   "phone": "(205) 410-2699",
@@ -49,12 +49,12 @@ export const site = {
   }
 };
 
-export type NavItem = { label: string; href: string; children?: { label: string; href: string }[] };
+export type NavItem = {
+  label: string;
+  href: string;
+  children?: { label: string; href: string; icon?: string }[];
+};
 export const nav: NavItem[] = [
-  {
-    "label": "LAND FOR SALE",
-    "href": "/land-for-sale"
-  },
   {
     "label": "SERVICES",
     "href": "/land-maintenance-and-management",
@@ -64,8 +64,34 @@ export const nav: NavItem[] = [
         "href": "/land-maintenance-and-management"
       },
       {
+        "label": "Road Construction",
+        "href": "/road-construction",
+        "icon": "road"
+      },
+      {
+        "label": "Land For Sale",
+        "href": "/land-for-sale",
+        "icon": "for-sale"
+      },
+      {
         "label": "Controlled Burns",
-        "href": "/control-burning"
+        "href": "/control-burning",
+        "icon": "flame"
+      },
+      {
+        "label": "Septic Tank & Waterlines",
+        "href": "/septic-tank-and-waterlines",
+        "icon": "droplet"
+      },
+      {
+        "label": "Home Site Preparation / Hunting Lodge",
+        "href": "/home-site-preparation",
+        "icon": "cabin"
+      },
+      {
+        "label": "High Fence & Property Management",
+        "href": "/high-fence-and-property-management",
+        "icon": "fence"
       }
     ]
   },
@@ -102,6 +128,10 @@ export const nav: NavItem[] = [
         "href": "/coal-ridge-rv-park"
       }
     ]
+  },
+  {
+    "label": "LAND FOR SALE",
+    "href": "/land-for-sale"
   },
   {
     "label": "ABOUT",

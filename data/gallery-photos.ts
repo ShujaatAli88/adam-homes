@@ -64,10 +64,6 @@ export const photos: GalleryPhoto[] = [
     "alt": "High Ground Land Solutions — past work photo 14"
   },
   {
-    "src": "/media/photos/photo-015.jpg",
-    "alt": "High Ground Land Solutions — past work photo 15"
-  },
-  {
     "src": "/media/photos/photo-016.jpg",
     "alt": "High Ground Land Solutions — past work photo 16"
   },
@@ -114,10 +110,6 @@ export const photos: GalleryPhoto[] = [
   {
     "src": "/media/photos/photo-027.jpg",
     "alt": "High Ground Land Solutions — past work photo 27"
-  },
-  {
-    "src": "/media/photos/photo-028.jpg",
-    "alt": "High Ground Land Solutions — past work photo 28"
   },
   {
     "src": "/media/photos/photo-029.jpg",
@@ -288,24 +280,12 @@ export const photos: GalleryPhoto[] = [
     "alt": "High Ground Land Solutions — past work photo 70"
   },
   {
-    "src": "/media/photos/photo-071.jpg",
-    "alt": "High Ground Land Solutions — past work photo 71"
-  },
-  {
     "src": "/media/photos/photo-072.jpg",
     "alt": "High Ground Land Solutions — past work photo 72"
   },
   {
-    "src": "/media/photos/photo-073.jpg",
-    "alt": "High Ground Land Solutions — past work photo 73"
-  },
-  {
     "src": "/media/photos/photo-074.jpg",
     "alt": "High Ground Land Solutions — past work photo 74"
-  },
-  {
-    "src": "/media/photos/photo-075.jpg",
-    "alt": "High Ground Land Solutions — past work photo 75"
   },
   {
     "src": "/media/photos/photo-076.jpg",
@@ -472,24 +452,12 @@ export const photos: GalleryPhoto[] = [
     "alt": "High Ground Land Solutions — past work photo 116"
   },
   {
-    "src": "/media/photos/photo-117.jpg",
-    "alt": "High Ground Land Solutions — past work photo 117"
-  },
-  {
     "src": "/media/photos/photo-118.jpg",
     "alt": "High Ground Land Solutions — past work photo 118"
   },
   {
-    "src": "/media/photos/photo-119.jpg",
-    "alt": "High Ground Land Solutions — past work photo 119"
-  },
-  {
     "src": "/media/photos/photo-120.jpg",
     "alt": "High Ground Land Solutions — past work photo 120"
-  },
-  {
-    "src": "/media/photos/photo-121.jpg",
-    "alt": "High Ground Land Solutions — past work photo 121"
   },
   {
     "src": "/media/photos/photo-122.jpg",
@@ -504,40 +472,12 @@ export const photos: GalleryPhoto[] = [
     "alt": "High Ground Land Solutions — past work photo 124"
   },
   {
-    "src": "/media/photos/photo-125.jpg",
-    "alt": "High Ground Land Solutions — past work photo 125"
-  },
-  {
-    "src": "/media/photos/photo-126.jpg",
-    "alt": "High Ground Land Solutions — past work photo 126"
-  },
-  {
     "src": "/media/photos/photo-127.jpg",
     "alt": "High Ground Land Solutions — past work photo 127"
   },
   {
-    "src": "/media/photos/photo-128.jpg",
-    "alt": "High Ground Land Solutions — past work photo 128"
-  },
-  {
-    "src": "/media/photos/photo-129.jpg",
-    "alt": "High Ground Land Solutions — past work photo 129"
-  },
-  {
-    "src": "/media/photos/photo-130.jpg",
-    "alt": "High Ground Land Solutions — past work photo 130"
-  },
-  {
     "src": "/media/photos/photo-131.jpg",
     "alt": "High Ground Land Solutions — past work photo 131"
-  },
-  {
-    "src": "/media/photos/photo-132.jpg",
-    "alt": "High Ground Land Solutions — past work photo 132"
-  },
-  {
-    "src": "/media/photos/photo-133.jpg",
-    "alt": "High Ground Land Solutions — past work photo 133"
   },
   {
     "src": "/media/photos/photo-134.jpg",
@@ -632,16 +572,8 @@ export const photos: GalleryPhoto[] = [
     "alt": "High Ground Land Solutions — past work photo 156"
   },
   {
-    "src": "/media/photos/photo-157.jpg",
-    "alt": "High Ground Land Solutions — past work photo 157"
-  },
-  {
     "src": "/media/photos/photo-158.jpg",
     "alt": "High Ground Land Solutions — past work photo 158"
-  },
-  {
-    "src": "/media/photos/photo-159.jpg",
-    "alt": "High Ground Land Solutions — past work photo 159"
   },
   {
     "src": "/media/photos/photo-160.jpg",

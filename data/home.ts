@@ -6,8 +6,8 @@ export const heroIntro = {
   eyebrow: 'LAND',
   headline: 'IS WHAT WE DO!',
   buttons: [
-    { label: 'Land for Sale', href: '/land-for-sale' },
     { label: 'Land Consulting Services', href: '/land-maintenance-and-management' },
+    { label: 'Land for Sale', href: '/land-for-sale' },
   ],
 };
 
@@ -56,12 +56,16 @@ export const homeServiceCards: HomeCard[] = [
     "icon": "cabin"
   },
   {
-    "title": "Silviculture Consulting",
-    "href": "/silviculture-consulting",
+    // STAND-IN IMAGE: not a real High Fence & Property Management photo -
+    // client asked for a less jarring generic placeholder than the
+    // "photo pending" graphic. Swap for the real photo once supplied.
+    // Copy is still a placeholder pending client-supplied text.
+    "title": "High Fence & Property Management",
+    "href": "/high-fence-and-property-management",
     "img": "/images/home/services/Timber-Consulting-Services-Lamar-county.jpeg",
-    "alt": "Timber Consulting Services Lamar county",
-    "description": "Forest health guidance, regeneration planning, and timber market strategy for productive stands.",
-    "icon": "sapling"
+    "alt": "High Ground Land Solutions — property under management",
+    "description": "[PLACEHOLDER — PENDING FROM CLIENT]",
+    "icon": "fence"
   }
 ];
 

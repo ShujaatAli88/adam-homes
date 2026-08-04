@@ -1,7 +1,7 @@
-// The exact 4 video slots from the live site's Gallery Videos page (verified
-// directly against highgroundland.com/gallery-videos/) - 3 unique source
-// files; slot 1 and slot 3 use the same file, which is intentional/verbatim
-// on the live site, not a duplicate-content mistake.
+// All previous videos removed per client request (2026-08-04). New footage
+// from the 2026 RX Burn and Coal Ridge folders will populate this list once
+// supplied - the VideoGrid component stays wired up and renders an empty
+// grid until then.
 export const heading = {
   eyebrow: 'GALLERY VIDEOS',
   title: 'CHECK OUT SOME OF OUR PAST WORK',
@@ -14,29 +14,4 @@ export const heading = {
 // cards, so we don't render one either.
 export type VideoEntry = { src: string; poster: string; duration: string; label: string };
 
-export const videos: VideoEntry[] = [
-  {
-    src: '/videos/gallery/video-01.mp4',
-    poster: '/videos/gallery/posters/video-01.jpg',
-    duration: '1:58',
-    label: 'Aerial overview',
-  },
-  {
-    src: '/videos/gallery/video-02.mp4',
-    poster: '/videos/gallery/posters/video-02.jpg',
-    duration: '0:07',
-    label: 'Perry County',
-  },
-  {
-    src: '/videos/gallery/video-01.mp4',
-    poster: '/videos/gallery/posters/video-01.jpg',
-    duration: '1:58',
-    label: 'Aerial overview',
-  },
-  {
-    src: '/videos/gallery/video-03.mp4',
-    poster: '/videos/gallery/posters/video-03.jpg',
-    duration: '0:11',
-    label: 'Fayette County',
-  },
-];
+export const videos: VideoEntry[] = [];

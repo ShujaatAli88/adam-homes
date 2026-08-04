@@ -32,7 +32,7 @@ export default function CoalRidgeRvParkPage() {
       <PageHero
         title="Coal Ridge RV Park | Berry AL"
         crumb="Home / Coal Ridge RV Park"
-        bgImage="/images/background_image.png"
+        bgImage="/images/forest.jpg"
         titleTone="dark"
       />
       <section className="bg-white px-5 py-16 sm:py-24">
