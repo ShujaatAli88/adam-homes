@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ReactNode, useRef } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { ReactNode } from "react";
 import clsx from "clsx";
 
 type ButtonProps = {
@@ -12,7 +11,6 @@ type ButtonProps = {
   className?: string;
   target?: string;
   rel?: string;
-  showArrow?: boolean;
 };
 
 const base =
@@ -43,65 +41,29 @@ export default function Button({
   className,
   target,
   rel,
-  showArrow = true,
 }: ButtonProps) {
-  const ref = useRef<HTMLAnchorElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const springX = useSpring(x, { stiffness: 200, damping: 15 });
-  const springY = useSpring(y, { stiffness: 200, damping: 15 });
-
-  function onMouseMove(e: React.MouseEvent<HTMLAnchorElement>) {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    x.set((e.clientX - rect.left - rect.width / 2) * 0.25);
-    y.set((e.clientY - rect.top - rect.height / 2) * 0.4);
-  }
-
-  function onMouseLeave() {
-    x.set(0);
-    y.set(0);
-  }
-
   return (
-    <motion.div style={{ x: springX, y: springY }} className="inline-block">
-      <Link
-        ref={ref}
-        href={href}
-        target={target}
-        rel={rel}
-        onMouseMove={onMouseMove}
-        onMouseLeave={onMouseLeave}
-        className={clsx(base, variants[variant], className)}
-      >
-        <span
-          aria-hidden
-          className={clsx(
-            "absolute inset-0 origin-left scale-x-0 transition-transform duration-400 ease-out group-hover:scale-x-100",
-            fillVariants[variant]
-          )}
-        />
-        <span
-          className={clsx(
-            "relative z-10 transition-colors duration-300",
-            hoverTextVariants[variant]
-          )}
-        >
-          {children}
-        </span>
-        {showArrow && (
-          <span
-            aria-hidden
-            className={clsx(
-              "relative z-10 inline-block transition-transform duration-300 group-hover:translate-x-1",
-              hoverTextVariants[variant]
-            )}
-          >
-            →
-          </span>
+    <Link
+      href={href}
+      target={target}
+      rel={rel}
+      className={clsx(base, variants[variant], className)}
+    >
+      <span
+        aria-hidden
+        className={clsx(
+          "absolute inset-0 origin-left scale-x-0 transition-transform duration-400 ease-out group-hover:scale-x-100",
+          fillVariants[variant]
         )}
-      </Link>
-    </motion.div>
+      />
+      <span
+        className={clsx(
+          "relative z-10 transition-colors duration-300",
+          hoverTextVariants[variant]
+        )}
+      >
+        {children}
+      </span>
+    </Link>
   );
 }

@@ -25,7 +25,7 @@ export default function LandForSalePage() {
         title="Land for Sale"
         crumb="Home / Land for Sale"
         dividerFill="var(--color-surface-2)"
-        bgImage="/media/listings/northport-turnkey-hunting-timber-tract-w-cabin-on-lake.jpg"
+        bgImage="/images/land_for_sale.jpg"
       />
       <section className="bg-surface-2 px-5 py-16 sm:py-24">
         <div className="mx-auto max-w-[1400px]">

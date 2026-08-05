@@ -369,12 +369,7 @@ export default function ContactForm() {
                   Sending…
                 </>
               ) : (
-                <>
-                  {contact.form.submitLabel}
-                  <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </>
+                contact.form.submitLabel
               )}
             </button>
           </motion.form>

@@ -34,10 +34,10 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-center gap-10 px-5 text-center">
           <Reveal>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-6">
-              <Button href={heroIntro.buttons[0].href} variant="outline" showArrow={false}>
+              <Button href={heroIntro.buttons[0].href} variant="outline">
                 {heroIntro.buttons[0].label}
               </Button>
-              <Button href={heroIntro.buttons[1].href} variant="outline" showArrow={false}>
+              <Button href={heroIntro.buttons[1].href} variant="outline">
                 {heroIntro.buttons[1].label}
               </Button>
             </div>
