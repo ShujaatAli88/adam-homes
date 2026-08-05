@@ -18,7 +18,7 @@ export default function ControlBurningPage() {
       <PageHero
         title="Control Burning"
         crumb="Home / Control Burning"
-        bgImage="/images/forest.jpg"
+        bgImage="/images/control-burning/Prescribed-Burns-Perry-county.jpeg"
         titleTone="dark"
       />
 

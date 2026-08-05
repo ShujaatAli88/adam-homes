@@ -15,7 +15,7 @@ export default function TwistedPinePage() {
       <PageHero
         title={project.title}
         crumb="Home / Twisted Pine"
-        bgImage="/images/forest.jpg"
+        bgImage="/images/projects/twisted-pine/during/Aerial-Drone-Photography-Dallas-County-a.jpg"
         titleTone="dark"
       />
       <section className="bg-white px-5 py-16 sm:py-24">

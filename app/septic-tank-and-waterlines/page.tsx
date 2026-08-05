@@ -16,6 +16,7 @@ export default function SepticTankPage() {
       eyebrow="Septic & Water Line Installation"
       icon="droplet"
       service={septicTankService}
+      heroImage="/images/land-maintenance/DJI_0062.jpg"
     />
   );
 }

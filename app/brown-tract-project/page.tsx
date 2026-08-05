@@ -15,7 +15,7 @@ export default function BrownTractPage() {
       <PageHero
         title={project.title}
         crumb="Home / Brown Tract Project"
-        bgImage="/images/forest.jpg"
+        bgImage="/images/projects/brown-tract/complete/Aerial-Drone-Photography-Fayette-County-1.jpg"
         titleTone="dark"
       />
       <section className="bg-white px-5 py-16 sm:py-24">

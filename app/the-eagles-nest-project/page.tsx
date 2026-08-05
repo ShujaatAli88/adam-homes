@@ -15,7 +15,7 @@ export default function EaglesNestPage() {
       <PageHero
         title={project.title}
         crumb="Home / The Eagle's Nest Project"
-        bgImage="/images/forest.jpg"
+        bgImage="/images/projects/eagles-nest/final/Aerial-Drone-Photography-Hale-County-a.jpg"
         titleTone="dark"
       />
       <section className="bg-white px-5 py-16 sm:py-24">

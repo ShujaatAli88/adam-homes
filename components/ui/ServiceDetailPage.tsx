@@ -13,19 +13,21 @@ export default function ServiceDetailPage({
   eyebrow,
   icon,
   service,
+  heroImage,
 }: {
   title: string;
   crumb: string;
   eyebrow: string;
   icon: string;
   service: ServiceBlock;
+  heroImage?: string;
 }) {
   return (
     <>
       <PageHero
         title={title}
         crumb={crumb}
-        bgImage="/images/forest.jpg"
+        bgImage={heroImage ?? service.images[0]?.src ?? "/images/forest.jpg"}
         titleTone="dark"
       />
 

@@ -18,7 +18,7 @@ export default function LandMaintenancePage() {
       <PageHero
         title="Land Maintenance and Management"
         crumb="Home / Land Maintenance and Management"
-        bgImage="/images/forest.jpg"
+        bgImage="/images/land-maintenance/Waterline-Install-Tuscaloosa-County.jpg"
         titleTone="dark"
       />
 

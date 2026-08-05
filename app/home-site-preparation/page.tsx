@@ -16,6 +16,7 @@ export default function HomeSitePreparationPage() {
       eyebrow="Home Site & Hunting Lodge Pad Prep"
       icon="cabin"
       service={roadConstructionService}
+      heroImage="/images/land-maintenance/Waterline-Install-Tuscaloosa-County-a.jpg"
     />
   );
 }

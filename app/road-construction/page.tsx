@@ -16,6 +16,7 @@ export default function RoadConstructionPage() {
       eyebrow="Land Clearing & Road Creation"
       icon="road"
       service={roadConstructionService}
+      heroImage="/images/land-maintenance/Land-Clearing-Hale-County-a.jpg"
     />
   );
 }

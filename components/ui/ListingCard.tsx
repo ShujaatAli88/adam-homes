@@ -42,7 +42,7 @@ export default function ListingCard({ listing }: { listing: Listing }) {
           {listing.county}
         </p>
         <h3 className="text-xl font-semibold text-ink">{listing.title}</h3>
-        <p className="text-sm text-ink-2">
+        <p className="flex-1 text-sm text-ink-2">
           {listing.acres}
           {listing.status === "sold" ? ` — Sold for ${listing.price}` : ""}
           {listing.status === "under-contract" ? ` — Listed at ${listing.price}` : ""}
@@ -51,7 +51,7 @@ export default function ListingCard({ listing }: { listing: Listing }) {
           href={listing.listingUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-900 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-brand-600 hover:-translate-y-0.5"
+          className="mt-4 inline-flex min-h-[44px] items-center justify-center self-start rounded-full bg-brand-900 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-brand-600 hover:-translate-y-0.5"
         >
           View Property
         </a>
