@@ -16,7 +16,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHero title="About High Ground Land Solutions" crumb="Home / About" image="/images/hero-poster.jpg" />
+      <PageHero
+        title="About High Ground Land Solutions"
+        crumb="Home / About"
+        bgImage="/images/forest.jpg"
+        titleTone="dark"
+      />
 
       {/* Company intro */}
       <section className="relative overflow-hidden bg-white px-5 pb-16 pt-16 sm:pb-24 sm:pt-24">

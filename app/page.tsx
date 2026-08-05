@@ -123,7 +123,7 @@ export default function Home() {
           </span>
 
           <div className="border-l-2 border-brand-500 pl-6 sm:pl-10">
-            <p className="font-display text-[clamp(1.2rem,2.6vw,1.75rem)] italic font-light leading-relaxed text-white/95">
+            <p className="font-display text-[clamp(1.2rem,2.6vw,1.75rem)] font-light leading-relaxed text-white/95">
               {passionText}
             </p>
           </div>

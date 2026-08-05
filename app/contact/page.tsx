@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
-import PhonePopover from "@/components/ui/PhonePopover";
 import ContactForm from "@/components/ui/ContactForm";
 import Reveal from "@/components/ui/Reveal";
-import { contact } from "@/data/contact";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -13,15 +11,12 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHero title="Contact" crumb="Home / Contact" image="/images/hero-poster.jpg" />
-      <section className="bg-white px-5 py-16 text-center sm:py-20">
-        <Reveal>
-          <h2 className="mb-8 text-[clamp(1.5rem,4vw,2.25rem)] font-semibold text-brand-900">
-            {contact.title}
-          </h2>
-          <PhonePopover />
-        </Reveal>
-      </section>
+      <PageHero
+        title="Contact"
+        crumb="Home / Contact"
+        bgImage="/images/forest.jpg"
+        titleTone="dark"
+      />
       <section className="bg-surface-2 px-5 py-16 sm:py-24">
         <Reveal>
           <ContactForm />

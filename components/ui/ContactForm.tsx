@@ -1,8 +1,11 @@
 "use client";
 
 import { useState, type ReactElement, type FormEvent } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { contact } from "@/data/contact";
+import { about } from "@/data/about";
+import { site } from "@/data/site";
 
 function IconPerson() {
   return (
@@ -166,7 +169,8 @@ export default function ContactForm() {
   });
   const [message, setMessage] = useState("");
   const [messageFocused, setMessageFocused] = useState(false);
-  const [status, setStatus] = useState<"idle" | "submitting" | "done">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "done" | "error">("idle");
+  const [feedback, setFeedback] = useState<string | null>(null);
 
   const set = (name: string) => (v: string) => setValues((prev) => ({ ...prev, [name]: v }));
 
@@ -174,25 +178,98 @@ export default function ContactForm() {
     .filter((f) => f.required)
     .every((f) => validate(f.name, values[f.name] ?? ""));
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    if (!allValid || status !== "idle") return;
+    if (!allValid || (status !== "idle" && status !== "error")) return;
     setStatus("submitting");
-    setTimeout(() => setStatus("done"), 900);
+    setFeedback(null);
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${site.email}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          Name: `${values.first} ${values.last}`,
+          Email: values.email,
+          Phone: values.phone,
+          Message: message,
+          _subject: `New website inquiry from ${values.first} ${values.last}`,
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      const data = await res.json().catch(() => null);
+      const success = res.ok && (data?.success === true || data?.success === "true");
+      if (!success) {
+        setFeedback(
+          data?.message ??
+            "Something went wrong sending your message — please try again or call us directly."
+        );
+        setStatus("error");
+        return;
+      }
+      setStatus("done");
+    } catch {
+      setFeedback("Something went wrong sending your message — please try again or call us directly.");
+      setStatus("error");
+    }
   }
 
   const messageFloated = messageFocused || message.length > 0;
 
   return (
-    <div className="relative mx-auto max-w-2xl overflow-hidden rounded-3xl bg-white p-6 shadow-xl ring-1 ring-black/5 sm:p-10">
-      <span
-        aria-hidden
-        className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-brand-500 via-brand-900 to-brand-500"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-brand-100 blur-3xl"
-      />
+    <div className="relative mx-auto max-w-2xl pt-14 sm:pt-16">
+      <motion.div
+        initial={{ opacity: 0, y: -14, scale: 0.9 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+        className="absolute left-1/2 top-0 z-10 -translate-x-1/2"
+      >
+        <div className="relative">
+          <span
+            aria-hidden
+            className="absolute -inset-2 rounded-full bg-gradient-to-br from-brand-500 via-brand-600 to-brand-900 opacity-60 blur-lg"
+          />
+          <Image
+            src={about.photo}
+            alt={about.ownerName}
+            width={112}
+            height={112}
+            className="relative h-24 w-24 rounded-full object-cover ring-[5px] ring-white shadow-xl sm:h-28 sm:w-28"
+          />
+          <span className="absolute bottom-1 right-1 flex h-6 w-6 items-center justify-center rounded-full bg-brand-500 ring-[3px] ring-white">
+            <motion.span
+              aria-hidden
+              animate={{ scale: [1, 1.6, 1], opacity: [0.7, 0, 0.7] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              className="absolute h-2 w-2 rounded-full bg-white"
+            />
+            <span className="h-2 w-2 rounded-full bg-white" />
+          </span>
+        </div>
+      </motion.div>
+
+      <div className="relative overflow-hidden rounded-3xl bg-white p-6 pt-16 shadow-xl ring-1 ring-black/5 sm:p-10 sm:pt-20">
+        <span
+          aria-hidden
+          className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-brand-500 via-brand-900 to-brand-500"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-brand-100 blur-3xl"
+        />
+
+        <div className="relative mb-8 text-center">
+          <p className="text-base font-semibold text-brand-900">
+            You&apos;re talking directly to {about.ownerName}
+          </p>
+          <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-ink-2/60">
+            {about.ownerTitle} · {about.veteranBadge}
+          </p>
+        </div>
 
       <AnimatePresence mode="wait">
         {status === "done" ? (
@@ -267,6 +344,16 @@ export default function ContactForm() {
               </span>
             </div>
 
+            {status === "error" && (
+              <p className="text-sm font-medium text-red-500">
+                {feedback} Or call us at{" "}
+                <a href={site.phoneHref} className="underline">
+                  {site.phone}
+                </a>
+                .
+              </p>
+            )}
+
             <button
               type="submit"
               disabled={!allValid || status === "submitting"}
@@ -293,6 +380,7 @@ export default function ContactForm() {
           </motion.form>
         )}
       </AnimatePresence>
+      </div>
     </div>
   );
 }

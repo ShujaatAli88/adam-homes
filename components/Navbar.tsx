@@ -56,23 +56,23 @@ export default function Navbar() {
       <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-3 sm:px-5 sm:pt-5">
         <div
           className={clsx(
-            "flex w-full max-w-[1180px] items-center justify-between rounded-full transition-all duration-500 ease-out",
+            "flex w-full max-w-[1280px] items-center justify-between rounded-full transition-all duration-500 ease-out",
             scrolled
-              ? "bg-cream/95 px-4 py-2.5 shadow-lg ring-1 ring-black/5 backdrop-blur-md sm:px-6"
-              : "bg-white/10 px-4 py-3.5 backdrop-blur-sm sm:px-6 sm:py-4"
+              ? "bg-white/80 px-5 py-3 shadow-lg ring-1 ring-black/5 backdrop-blur-xl sm:px-7"
+              : "bg-white px-5 py-4 shadow-lg ring-1 ring-black/5 sm:px-7 sm:py-5"
           )}
         >
           <Link href="/" className="flex shrink-0 items-center gap-3">
             <motion.span whileHover={{ scale: 1.04 }} transition={{ duration: 0.2 }}>
               <Image
-                src={site.logo}
+                src={site.logoNavbar}
                 alt={`${site.name} Logo`}
-                width={640}
-                height={178}
+                width={1458}
+                height={464}
                 priority
                 className={clsx(
                   "w-auto transition-all duration-500",
-                  scrolled ? "h-8 sm:h-9" : "h-9 sm:h-10"
+                  scrolled ? "h-11 sm:h-12" : "h-12 sm:h-14"
                 )}
               />
             </motion.span>
@@ -93,10 +93,7 @@ export default function Navbar() {
                   {hovered === i && (
                     <motion.div
                       layoutId="nav-hover-pill"
-                      className={clsx(
-                        "absolute inset-0 rounded-full",
-                        scrolled ? "bg-brand-100" : "bg-white/15"
-                      )}
+                      className="absolute inset-0 rounded-full bg-brand-100"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
@@ -109,12 +106,7 @@ export default function Navbar() {
                 </AnimatePresence>
                 <Link
                   href={item.href}
-                  className={clsx(
-                    "relative z-10 flex items-center gap-1.5 px-4 py-2 text-[0.8rem] font-semibold uppercase tracking-wide transition-colors",
-                    scrolled
-                      ? "text-ink-2 hover:text-brand-900"
-                      : "text-white/90 hover:text-white"
-                  )}
+                  className="relative z-10 flex items-center gap-1.5 px-4 py-2 text-[0.8rem] font-semibold uppercase tracking-wide text-ink-2 transition-colors hover:text-brand-900"
                 >
                   {item.label}
                   {item.children && (
@@ -173,7 +165,7 @@ export default function Navbar() {
                 )}
 
                 {item.children && item.label === "SERVICES" && (
-                  <div className="invisible absolute right-0 top-full w-[460px] translate-y-3 pt-3 opacity-0 transition-all duration-300 ease-out group-hover:visible group-hover:translate-y-1 group-hover:opacity-100">
+                  <div className="invisible absolute right-0 top-full w-[540px] translate-y-3 pt-3 opacity-0 transition-all duration-300 ease-out group-hover:visible group-hover:translate-y-1 group-hover:opacity-100">
                     <div className="overflow-hidden rounded-2xl bg-white shadow-2xl shadow-black/20 ring-1 ring-black/5">
                       <span className="block h-[3px] w-full bg-gradient-to-r from-brand-500 via-brand-600 to-brand-500" />
                       <ul className="grid grid-cols-2 gap-1 p-3">
@@ -210,10 +202,7 @@ export default function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
-            className={clsx(
-              "flex h-11 w-11 items-center justify-center rounded-full transition-colors lg:hidden",
-              scrolled ? "text-ink" : "text-white"
-            )}
+            className="flex h-11 w-11 items-center justify-center rounded-full text-ink transition-colors lg:hidden"
           >
             <span className="relative flex h-4 w-6 flex-col justify-between">
               <span className="h-0.5 w-full bg-current" />
@@ -236,11 +225,11 @@ export default function Navbar() {
           >
             <div className="flex items-center justify-between px-6 pt-6">
               <Image
-                src={site.logo}
+                src={site.logoNavbar}
                 alt={`${site.name} Logo`}
-                width={640}
-                height={178}
-                className="h-9 w-auto brightness-0 invert"
+                width={1458}
+                height={464}
+                className="h-11 w-auto brightness-0 invert"
               />
               <button
                 type="button"
