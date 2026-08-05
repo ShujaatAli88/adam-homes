@@ -186,16 +186,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Divider marking the handoff from Projects to the footer */}
-      <div className="relative flex items-center justify-center bg-white py-2">
-        <span
-          aria-hidden
-          className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-brand-500/50 to-transparent"
-        />
-        <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-brand-500/30 bg-brand-900 text-white shadow-[0_10px_30px_-10px_rgba(31,49,41,0.55)]">
-          <CardIcon name="camera" />
-        </span>
-      </div>
     </>
   );
 }
