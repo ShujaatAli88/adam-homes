@@ -58,8 +58,8 @@ export default function Navbar() {
           className={clsx(
             "flex w-full max-w-[1280px] items-center justify-between rounded-full transition-all duration-500 ease-out",
             scrolled
-              ? "bg-white/80 px-5 py-3 shadow-lg ring-1 ring-black/5 backdrop-blur-xl sm:px-7"
-              : "bg-white px-5 py-4 shadow-lg ring-1 ring-black/5 sm:px-7 sm:py-5"
+              ? "bg-white/80 px-5 py-2 shadow-lg ring-1 ring-black/5 backdrop-blur-xl sm:px-6"
+              : "bg-white px-5 py-2.5 shadow-lg ring-1 ring-black/5 sm:px-6 sm:py-3"
           )}
         >
           <Link href="/" className="flex shrink-0 items-center gap-3">
@@ -72,7 +72,7 @@ export default function Navbar() {
                 priority
                 className={clsx(
                   "w-auto transition-all duration-500",
-                  scrolled ? "h-11 sm:h-12" : "h-12 sm:h-14"
+                  scrolled ? "h-9 sm:h-10" : "h-10 sm:h-11"
                 )}
               />
             </motion.span>

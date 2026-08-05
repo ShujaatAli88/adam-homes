@@ -8,7 +8,6 @@ const titleClass = "text-[clamp(2.1rem,5vw,3.5rem)] font-semibold";
 
 export default function PageHero({
   title,
-  crumb,
   dividerFill = "#ffffff",
   image,
   bgImage,
@@ -51,9 +50,6 @@ export default function PageHero({
             {title}
           </h1>
         )}
-        <p className="mt-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/55">
-          {crumb}
-        </p>
       </Reveal>
       <AngledDivider fill={dividerFill} />
     </section>
