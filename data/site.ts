@@ -40,7 +40,7 @@ export const site = {
     }
   ],
   "footerNote": "High Ground Land Solutions | © All Rights Reserved | Web Design & Marketing by Atlanta SEO",
-  "footerTagline": "High Ground Land Solutions is a full-service land management company and licensed, insured land realtor serving West Alabama — owner-operated and Veteran-owned.",
+  "footerTagline": "High Ground Land Solutions is a full-service licensed and insured excavating and land management company serving West Alabama — Owner-Operated Land Broker and Veteran-owned.",
   "veteranBadge": "Veteran-Owned & Operated",
   "newsletterLabel": "Get Land Listings & Updates",
   "social": {
@@ -94,6 +94,11 @@ export const nav: NavItem[] = [
         "label": "High Fence & Property Management",
         "href": "/high-fence-and-property-management",
         "icon": "fence"
+      },
+      {
+        "label": "Silviculture Consulting & Food Plot Plantings",
+        "href": "/silviculture-consulting-and-food-plot-plantings",
+        "icon": "pine"
       }
     ]
   },

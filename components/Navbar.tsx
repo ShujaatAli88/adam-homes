@@ -56,10 +56,10 @@ export default function Navbar() {
       <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-3 sm:px-5 sm:pt-5">
         <div
           className={clsx(
-            "flex w-full max-w-[1280px] items-center justify-between rounded-full transition-all duration-500 ease-out",
+            "flex w-full max-w-[1320px] items-center justify-between rounded-full transition-all duration-500 ease-out",
             scrolled
-              ? "bg-white/80 px-5 py-2 shadow-lg ring-1 ring-black/5 backdrop-blur-xl sm:px-6"
-              : "bg-white px-5 py-2.5 shadow-lg ring-1 ring-black/5 sm:px-6 sm:py-3"
+              ? "bg-white/80 px-6 py-3 shadow-lg ring-1 ring-black/5 backdrop-blur-xl sm:px-8"
+              : "bg-white px-6 py-4 shadow-lg ring-1 ring-black/5 sm:px-8 sm:py-5"
           )}
         >
           <Link href="/" className="flex shrink-0 items-center gap-3">
@@ -72,7 +72,7 @@ export default function Navbar() {
                 priority
                 className={clsx(
                   "w-auto transition-all duration-500",
-                  scrolled ? "h-9 sm:h-10" : "h-10 sm:h-11"
+                  scrolled ? "h-12 sm:h-14" : "h-14 sm:h-16"
                 )}
               />
             </motion.span>

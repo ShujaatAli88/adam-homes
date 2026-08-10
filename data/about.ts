@@ -44,6 +44,7 @@ export const about = {
     "Home Site & Hunting Lodge Prep",
     "Wildlife Habitat Improvement",
     "Pond Management",
+    "Silviculture Consulting & Food Plot Plantings",
   ],
 
   bio: [

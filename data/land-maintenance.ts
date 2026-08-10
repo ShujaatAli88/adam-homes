@@ -69,6 +69,16 @@ export const services: ServiceBlock[] = [
       { src: "/images/home/services/Timber-Consulting-Services-Lamar-county.jpeg", alt: "High Ground Land Solutions — property under management" },
     ],
   },
+  {
+    // PLACEHOLDER: copy pending from client (client will supply verbiage).
+    // Image below is a stand-in green-field shot - swap for a real
+    // Silviculture Consulting / Food Plot Plantings photo once supplied.
+    title: "Silviculture Consulting & Food Plot Plantings",
+    body: "PLACEHOLDER COPY — pending from the client. Description of Silviculture Consulting & Food Plot Plantings services will go here once provided.",
+    images: [
+      { src: "/images/projects/twisted-pine/during/Aerial-Drone-Photography-Dallas-County-a.jpg", alt: "High Ground Land Solutions — planted field for wildlife habitat" },
+    ],
+  },
 ];
 
 // Named handles onto the blocks above, so individual service pages don't
@@ -76,6 +86,7 @@ export const services: ServiceBlock[] = [
 export const roadConstructionService = services[1];
 export const septicTankService = services[2];
 export const highFenceService = services[3];
+export const silvicultureService = services[4];
 
 export const relatedProjects = [
   {

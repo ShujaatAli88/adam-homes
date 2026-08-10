@@ -66,6 +66,17 @@ export const homeServiceCards: HomeCard[] = [
     "alt": "High Ground Land Solutions — property under management",
     "description": "[PLACEHOLDER — PENDING FROM CLIENT]",
     "icon": "fence"
+  },
+  {
+    // STAND-IN IMAGE: a verified green planted-field photo, not a labeled
+    // Silviculture/Food Plot photo (client will supply the real one).
+    // Copy is still a placeholder pending client-supplied text.
+    "title": "Silviculture Consulting & Food Plot Plantings",
+    "href": "/silviculture-consulting-and-food-plot-plantings",
+    "img": "/images/projects/twisted-pine/during/Aerial-Drone-Photography-Dallas-County-a.jpg",
+    "alt": "High Ground Land Solutions — planted field for wildlife habitat",
+    "description": "[PLACEHOLDER — PENDING FROM CLIENT]",
+    "icon": "pine"
   }
 ];
 

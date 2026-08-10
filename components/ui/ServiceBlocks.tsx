@@ -40,8 +40,27 @@ function IconTree() {
     </svg>
   );
 }
+function IconSapling() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="M12 21v-7.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path
+        d="M12 14c-4.5 0-6.5-2.4-6.5-6.8 4.5 0 6.5 2.4 6.5 6.8Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12 11c3.8 0 5.5-2 5.5-5.7-3.8 0-5.5 2-5.5 5.7Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
-const icons = [IconFlame, IconRoad, IconDroplet, IconTree];
+const icons = [IconFlame, IconRoad, IconDroplet, IconTree, IconSapling];
 
 function columnsFor(count: number) {
   if (count <= 1) return "sm:grid-cols-1";

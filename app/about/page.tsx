@@ -21,6 +21,7 @@ const serviceIcons: Record<string, string> = {
   "Home Site & Hunting Lodge Prep": "cabin",
   "Wildlife Habitat Improvement": "eagle",
   "Pond Management": "river",
+  "Silviculture Consulting & Food Plot Plantings": "pine",
 };
 
 export default function AboutPage() {
