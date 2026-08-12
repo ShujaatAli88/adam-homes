@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
 import { nav, site } from "@/data/site";
-import { homeProjectCards } from "@/data/home";
+import { homeProjectCardsExtended as homeProjectCards } from "@/data/home";
 import CardIcon from "./ui/CardIcon";
 
 const projectThumbs: Record<string, string> = Object.fromEntries(

@@ -142,6 +142,38 @@ export const nav: NavItem[] = [
       {
         "label": "Coal Ridge RV Park",
         "href": "/coal-ridge-rv-park"
+      },
+      {
+        "label": "Bankston",
+        "href": "/bankston"
+      },
+      {
+        "label": "Marion",
+        "href": "/marion"
+      },
+      {
+        "label": "Safford",
+        "href": "/safford"
+      },
+      {
+        "label": "Blountsville",
+        "href": "/blountsville"
+      },
+      {
+        "label": "Buhl",
+        "href": "/buhl"
+      },
+      {
+        "label": "Sawtooth Farms",
+        "href": "/sawtooth-farms"
+      },
+      {
+        "label": "Gordo",
+        "href": "/gordo"
+      },
+      {
+        "label": "Fosters",
+        "href": "/fosters"
       }
     ]
   },
