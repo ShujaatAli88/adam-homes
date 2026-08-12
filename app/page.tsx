@@ -9,6 +9,7 @@ import Marquee from "@/components/ui/Marquee";
 import Reveal from "@/components/ui/Reveal";
 import {
   heroIntro,
+  heroPoster,
   heroVideo,
   homeProjectCardsExtended as homeProjectCards,
   homeServiceCards,
@@ -27,7 +28,7 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative flex h-[100vh] min-h-[620px] w-full items-center justify-center overflow-hidden bg-brand-950 text-white">
-        <HeroParallax src={heroVideo} />
+        <HeroParallax src={heroVideo} poster={heroPoster} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/5 to-black/55" />
         <Grain />
 

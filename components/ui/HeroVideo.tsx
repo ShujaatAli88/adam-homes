@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-export default function HeroVideo({ src }: { src: string }) {
+export default function HeroVideo({ src, poster }: { src: string; poster?: string }) {
   const ref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -16,6 +16,7 @@ export default function HeroVideo({ src }: { src: string }) {
     <video
       ref={ref}
       className="absolute inset-0 h-full w-full object-cover"
+      poster={poster}
       autoPlay
       muted
       loop

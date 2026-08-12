@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import HeroVideo from "./HeroVideo";
 
-export default function HeroParallax({ src }: { src: string }) {
+export default function HeroParallax({ src, poster }: { src: string; poster?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -22,7 +22,7 @@ export default function HeroParallax({ src }: { src: string }) {
         className="absolute inset-0"
       >
         <motion.div style={{ y, scale: scrollScale }} className="absolute inset-0">
-          <HeroVideo src={src} />
+          <HeroVideo src={src} poster={poster} />
         </motion.div>
       </motion.div>
     </div>

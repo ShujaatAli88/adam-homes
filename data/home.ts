@@ -2,6 +2,10 @@ export type HomeCard = { title: string; href: string; img: string; alt: string; 
 
 export const heroVideo = '/videos/hero.mp4';
 
+// First frame of hero.mp4, shown while the video buffers so the hero is never
+// an empty black box on first paint.
+export const heroPoster = '/videos/hero-poster.jpg';
+
 export const heroIntro = {
   eyebrow: 'LAND',
   headline: 'IS WHAT WE DO!',
