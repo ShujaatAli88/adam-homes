@@ -12,12 +12,12 @@ export const heroIntro = {
 };
 
 export const passionText =
-  "We have a passion for the land \u2013 it\u2019s what we do every day. We certainly understand the \u201Cbusiness\u201D side of an investment in land, but we also appreciate the memories created\u2026the smile on your son\u2019s face when he takes his first deer\u2026the beauty of the sunset as you sit on your back porch with loved ones. Those are the things that make land ownership priceless.";
+  "We have a passion for the land\u2014it\u2019s what we do every day. We understand the business side of land ownership, but we also know its true value goes far beyond an investment. It\u2019s about seeing the potential in a piece of ground, making it better, and creating a place where memories are made\u2014from a son\u2019s first deer to sunsets on the porch with friends and family. To us, it\u2019s about making the most of your land today and leaving something meaningful for generations to come.";
 
 export const homeServiceCards: HomeCard[] = [
   {
-    "title": "Road Construction",
-    "href": "/road-construction",
+    "title": "Land Clearing & Road Construction",
+    "href": "/land-clearing-and-road-construction",
     "img": "/images/home/services/Waterline-Install-Tuscaloosa-County-b.jpg",
     "alt": "Waterline Install Tuscaloosa County b",
     "description": "From private access lanes to estate roads, we build durable, code-compliant land access for every property.",
@@ -48,8 +48,8 @@ export const homeServiceCards: HomeCard[] = [
     "icon": "droplet"
   },
   {
-    "title": "Home Site Preparation / Hunting Lodge",
-    "href": "/home-site-preparation",
+    "title": "Home & Hunting Lodge Site Preparation",
+    "href": "/home-and-hunting-lodge-site-preparation",
     "img": "/images/home/services/Food-Plot-Design-and-Construction-Tuscaloosa-county.jpeg",
     "alt": "Food Plot Design and Construction Tuscaloosa county",
     "description": "Site planning, clearing, and grading for cabins, lodges, long-term hunting camps, and family retreats.",
@@ -59,24 +59,32 @@ export const homeServiceCards: HomeCard[] = [
     // STAND-IN IMAGE: not a real High Fence & Property Management photo -
     // client asked for a less jarring generic placeholder than the
     // "photo pending" graphic. Swap for the real photo once supplied.
-    // Copy is still a placeholder pending client-supplied text.
     "title": "High Fence & Property Management",
     "href": "/high-fence-and-property-management",
     "img": "/images/home/services/Timber-Consulting-Services-Lamar-county.jpeg",
     "alt": "High Ground Land Solutions — property under management",
-    "description": "[PLACEHOLDER — PENDING FROM CLIENT]",
+    "description": "Turnkey upkeep for high-fence, hunting, and recreational properties — fences, roads, habitat, and the small details.",
     "icon": "fence"
   },
   {
+    // PENDING: client is sourcing a timber-truck-loading photo for this
+    // service - using the shared forest.jpg placeholder until supplied.
+    "title": "Silviculture Consulting",
+    "href": "/silviculture-consulting",
+    "img": "/images/forest.jpg",
+    "alt": "High Ground Land Solutions — forestland under silviculture management",
+    "description": "Timber stand evaluation and long-term forest management plans built around your goals for the land.",
+    "icon": "pine"
+  },
+  {
     // STAND-IN IMAGE: a verified green planted-field photo, not a labeled
-    // Silviculture/Food Plot photo (client will supply the real one).
-    // Copy is still a placeholder pending client-supplied text.
-    "title": "Silviculture Consulting & Food Plot Plantings",
-    "href": "/silviculture-consulting-and-food-plot-plantings",
+    // Food Plot photo (client will supply the real one).
+    "title": "Food Plot Plantings",
+    "href": "/food-plot-plantings",
     "img": "/images/projects/twisted-pine/during/Aerial-Drone-Photography-Dallas-County-a.jpg",
     "alt": "High Ground Land Solutions — planted field for wildlife habitat",
-    "description": "[PLACEHOLDER — PENDING FROM CLIENT]",
-    "icon": "pine"
+    "description": "Soil testing, seed selection, and planting designed to establish productive, sustainable food sources for wildlife.",
+    "icon": "sapling"
   }
 ];
 
@@ -138,3 +146,74 @@ export const homeProjectCards: HomeCard[] = [
     "icon": "drone"
   }
 ];
+
+// New project cards added: these link to project pages that read images
+// directly from the corresponding folder in /public/images/projects
+const newProjectCards: HomeCard[] = [
+  {
+    title: "Bankston",
+    href: "/bankston",
+    img: "/images/projects/Bankston/IMG_0502.JPEG",
+    alt: "Bankston project",
+    description: "Land improvement and site preparation work for the Bankston property.",
+    icon: "river",
+  },
+  {
+    title: "Marion",
+    href: "/marion",
+    img: "/images/projects/Marion/IMG_1822.JPEG",
+    alt: "Marion project",
+    description: "Comprehensive habitat and access improvements at the Marion site.",
+    icon: "pine",
+  },
+  {
+    title: "Safford",
+    href: "/safford",
+    img: "/images/projects/Safford/IMG_1939.JPEG",
+    alt: "Safford project",
+    description: "Before-and-after transformations at the Safford property.",
+    icon: "fence",
+  },
+  {
+    title: "Blountsville",
+    href: "/blountsville",
+    img: "/images/projects/Blountsville/IMG_2556.JPEG",
+    alt: "Blountsville project",
+    description: "Roadwork and clearing completed for the Blountsville site.",
+    icon: "road",
+  },
+  {
+    title: "Buhl",
+    href: "/buhl",
+    img: "/images/projects/Buhl/IMG_2518.JPEG",
+    alt: "Buhl project",
+    description: "Site prep and land management work on the Buhl property.",
+    icon: "cabin",
+  },
+  {
+    title: "Sawtooth Farms",
+    href: "/sawtooth-farms",
+    img: "/images/projects/Sawtooth Farms/IMG_2205.JPEG",
+    alt: "Sawtooth Farms project",
+    description: "Large-format landscape and farm improvements at Sawtooth Farms.",
+    icon: "farm",
+  },
+  {
+    title: "Gordo",
+    href: "/gordo",
+    img: "/images/projects/Gordo/IMG_1433.JPEG",
+    alt: "Gordo project",
+    description: "Comprehensive clearing and road-building at Gordo.",
+    icon: "tractor",
+  },
+  {
+    title: "Fosters",
+    href: "/fosters",
+    img: "/images/projects/Fosters/IMG_0622.JPEG",
+    alt: "Fosters project",
+    description: "Habitat enhancement and site prep work at Fosters.",
+    icon: "leaf",
+  },
+];
+
+export const homeProjectCardsExtended: HomeCard[] = [...homeProjectCards, ...newProjectCards];

@@ -1,8 +1,12 @@
 export const hero = {
   eyebrow: 'Control Burning: Prescribed Fire Burns',
   headline: 'OUT WITH THE OLD IN WITH THE NEW',
-  intro:
-    'The southeastern landscape is pristine and beautiful; however, overgrowth and unwanted tree species and undergrowth can quickly make your property unusable, and less valuable. High Ground Land Solutions takes fire very seriously. We add extra precautions such as multiple failsafe pathways, to ensure the fire does not \u201Cjump\u201D to other sections of your land. The end result is a precise, specific burn which cleanses your land of debris, sticks, brush, pests and insects. It\u2019s one of the quickest and affordable ways to instantly add function and value to your property. Native Americans mastered the art of fire for land management, and at High Ground Land Solutions we encourage all of our clients to implement a prescribed fire regime as the most efficient tool for land management.',
+  introLead:
+    'The southeastern landscape is pristine and beautiful; however, overgrowth, unwanted tree species, and dense undergrowth can quickly make your property unusable and less valuable. High Ground Land Solutions takes fire very seriously. We add extra precautions, including multiple failsafe pathways, to help ensure the fire stays within the intended burn area. The end result is a precise, specific burn that helps clear your land of debris, sticks, brush, pests, and insects. ',
+  introBold:
+    'When conducted under the proper prescription, prescribed fire is one of the most effective and efficient tools a landowner can use to manage and improve their property.',
+  introTrail:
+    ' Native Americans mastered the use of fire as a land management tool, and at High Ground Land Solutions, we encourage our clients to consider a prescribed fire regime as part of a long-term approach to maintaining healthy, functional, and valuable land.',
 };
 
 export type GalleryImage = { src: string; alt: string };

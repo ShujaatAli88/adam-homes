@@ -106,7 +106,11 @@ export default function Footer() {
           </Link>
 
           <p className="max-w-sm text-sm leading-relaxed text-white/55">
-            {site.footerTagline}
+            {site.footerTagline.lead}{" "}
+            <strong className="font-bold italic text-white/70">
+              {site.footerTagline.emphasis}
+            </strong>
+            {site.footerTagline.trail}
           </p>
 
           <span className="mt-4 inline-flex items-center rounded-full border border-white/40 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-white/90">

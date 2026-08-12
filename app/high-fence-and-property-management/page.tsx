@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import ServiceDetailPage from "@/components/ui/ServiceDetailPage";
 import { highFenceService } from "@/data/land-maintenance";
 
-// PLACEHOLDER: metadata copy pending from client.
 export const metadata: Metadata = {
   title: "High Fence & Property Management",
   description:
-    "[PLACEHOLDER — PENDING FROM CLIENT] High Fence & Property Management in West Alabama.",
+    "West Alabama High Fence & Property Management | Turnkey Property Upkeep",
 };
 
 export default function HighFencePropertyManagementPage() {
@@ -14,7 +13,7 @@ export default function HighFencePropertyManagementPage() {
     <ServiceDetailPage
       title="High Fence & Property Management"
       crumb="Home / High Fence & Property Management"
-      eyebrow="[Placeholder eyebrow — pending from client]"
+      eyebrow="High Fence & Property Management"
       icon="fence"
       service={highFenceService}
     />

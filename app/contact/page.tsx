@@ -111,7 +111,13 @@ export default function ContactPage() {
           <h1 className="mt-3 text-[clamp(2rem,5vw,3.25rem)] font-semibold leading-tight">
             Let&apos;s Talk About Your Land
           </h1>
-          <p className="mt-5 max-w-md leading-relaxed text-white/70">{site.footerTagline}</p>
+          <p className="mt-5 max-w-md leading-relaxed text-white/70">
+            {site.footerTagline.lead}{" "}
+            <strong className="font-bold italic text-white">
+              {site.footerTagline.emphasis}
+            </strong>
+            {site.footerTagline.trail}
+          </p>
 
           <ul className="mt-9 space-y-4 text-sm text-white/80">
             <li className="flex items-start gap-3">

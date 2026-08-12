@@ -22,13 +22,25 @@ export const services: ServiceBlock[] = [
     ],
   },
   {
-    title: "Land Clearing / Road Creation / Home Site Pad Prep",
-    body: "Clearing and leveling the land helps accomplish a land which is more functional. Our valued clients often request gravel roads to make traveling on their land via Truck or ATV much easier and safer. High Ground Land Solutions works closely with you to identify the area of land you want designed and enhanced. We then clear the land using tractors, control burns, and create a natural crown, grading the land for waterfall/rain run off, adding gravel to solidify the ground. Whether you want to create a lush pasture, open hunting plots, or gravel road systems, we have the experience, equipment, and ability.",
+    // RENAMED 2026: was "Land Clearing / Road Creation / Home Site Pad
+    // Prep" - client split this into two distinct services. This block is
+    // now Land Clearing & Road Construction only; Home & Hunting Lodge Site
+    // Preparation is its own block below with its own copy.
+    title: "Land Clearing & Road Construction",
+    body: "Whether you're opening up overgrown acreage, creating a new building site, or improving access throughout your property, proper clearing and road construction can transform the way you use your land. We provide land clearing and road construction with careful attention to the terrain, drainage, and long-term usability of your property—turning rough, hard-to-access ground into functional land that's ready for what comes next.",
     images: [
       { src: "/images/land-maintenance/Waterline-Install-Pickens-County-a.jpg", alt: "BEFORE: Brush Mowing, Tree Removal" },
       { src: "/images/land-maintenance/Waterline-Install-Tuscaloosa-County.jpg", alt: "DURING: Tractor Land Clearing" },
-      { src: "/images/land-maintenance/Waterline-Install-Tuscaloosa-County-a.jpg", alt: "DURING: Dirt Grading and Land Leveling" },
       { src: "/images/land-maintenance/Land-Clearing-Hale-County-a.jpg", alt: "AFTER: Gravel Road and Cleared Land" },
+    ],
+  },
+  {
+    // NEW 2026: split out of the former combined "Land Clearing / Road
+    // Creation / Home Site Pad Prep" block so it can carry its own copy.
+    title: "Home & Hunting Lodge Site Preparation",
+    body: "Choosing the right location for your home, cabin, or hunting lodge is about more than clearing a spot and breaking ground. High Ground Land Solutions can take raw or uneven ground and create a stable, properly graded building pad ready for construction. We consider the terrain, drainage, access, and intended use of the property to help ensure the site is prepared for long-term stability and function. Whether you're building a family home, weekend retreat, or hunting lodge tucked away on your property, our goal is to properly prepare the ground and create a solid foundation for a place you'll enjoy for years to come.",
+    images: [
+      { src: "/images/land-maintenance/Waterline-Install-Tuscaloosa-County-a.jpg", alt: "Graded home site pad, ready for construction" },
     ],
   },
   {
@@ -58,23 +70,30 @@ export const services: ServiceBlock[] = [
     ],
   },
   {
-    // PLACEHOLDER: copy pending from client. Do not ship without replacing
-    // body text with real client-supplied content. Image below is a
-    // stand-in (not a real High Fence & Property Management photo) - client
-    // asked for a generic photo instead of the "pending" graphic; swap for
-    // the real photo once supplied.
     title: "High Fence & Property Management",
-    body: "PLACEHOLDER COPY — pending from the client. Description of High Fence & Property Management services will go here once provided.",
+    body: "Every property requires ongoing attention to keep it functional, accessible, and well maintained. High Ground Land Solutions provides comprehensive property management tailored to the land and the goals of each owner, including high-fence, hunting, recreational, and rural properties. From fence-line maintenance, road and trail upkeep, vegetation management, and habitat improvements to the small details—greasing locks, cleaning and preparing shooting houses and stands, and making sure everything is ready when you arrive—we believe it's the details that matter. Our goal is to keep your property truly turnkey, allowing you to spend less time on upkeep and more time enjoying the land with friends and family and making memories.",
     images: [
       { src: "/images/home/services/Timber-Consulting-Services-Lamar-county.jpeg", alt: "High Ground Land Solutions — property under management" },
     ],
   },
   {
-    // PLACEHOLDER: copy pending from client (client will supply verbiage).
-    // Image below is a stand-in green-field shot - swap for a real
-    // Silviculture Consulting / Food Plot Plantings photo once supplied.
-    title: "Silviculture Consulting & Food Plot Plantings",
-    body: "PLACEHOLDER COPY — pending from the client. Description of Silviculture Consulting & Food Plot Plantings services will go here once provided.",
+    // NEW 2026: split out of the former combined "Silviculture Consulting
+    // & Food Plot Plantings" service - now its own page/nav entry.
+    // PENDING: client is sourcing a photo of timber being loaded onto a
+    // truck for this page's hero background. Using a placeholder forest
+    // image until that's supplied - swap /images/forest.jpg below once the
+    // real photo arrives.
+    title: "Silviculture Consulting",
+    body: "A healthy forest doesn't happen by accident. High Ground Land Solutions provides silviculture consulting to help landowners make informed decisions about the management, health, and long-term value of their timber and forestland. From evaluating existing timber stands and identifying undesirable species to developing plans for timber stand improvement, regeneration, wildlife habitat, and future harvests, we look at the property as a whole. Every tract is different, and our recommendations are based on the landowner's goals—whether that means improving timber quality and value, creating better wildlife habitat, restoring forest health, or simply leaving the land better for the next generation.",
+    images: [
+      { src: "/images/forest.jpg", alt: "High Ground Land Solutions — forestland under silviculture management" },
+    ],
+  },
+  {
+    // NEW 2026: split out of the former combined "Silviculture Consulting
+    // & Food Plot Plantings" service - now its own page/nav entry.
+    title: "Food Plot Plantings",
+    body: "A successful food plot starts long before the seed goes in the ground. High Ground Land Solutions takes a complete approach to food plot establishment, beginning with soil testing to determine the specific needs of your property. Based on those results, we apply the proper amounts of lime and fertilizer and select plantings suited to your soil, wildlife, and management goals. We work closely with seed dealers to select the right seed varieties and planting techniques to help maximize germination and establish a healthy, productive stand. We offer both spring and fall plantings using annuals and perennials and utilize modern planting methods designed to minimize soil compaction, reduce soil erosion, and protect the long-term health of your soil. Whether establishing a new plot or improving an existing one, our goal is to create productive, sustainable food sources that provide quality nutrition, attract and hold wildlife, and become an effective part of your overall habitat management program.",
     images: [
       { src: "/images/projects/twisted-pine/during/Aerial-Drone-Photography-Dallas-County-a.jpg", alt: "High Ground Land Solutions — planted field for wildlife habitat" },
     ],
@@ -84,8 +103,11 @@ export const services: ServiceBlock[] = [
 // Named handles onto the blocks above, so individual service pages don't
 // need to reference `services` by magic array index.
 export const roadConstructionService = services[1];
-export const septicTankService = services[2];
-export const highFenceService = services[3];
+export const homeSitePrepService = services[2];
+export const septicTankService = services[3];
+export const highFenceService = services[4];
+export const silvicultureConsultingService = services[5];
+export const foodPlotPlantingsService = services[6];
 export const silvicultureService = services[4];
 
 export const relatedProjects = [

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Reveal from "@/components/ui/Reveal";
+import Link from "next/link";
+import Reveal, { RevealGroup } from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
-import AngledDivider from "@/components/ui/AngledDivider";
 import Grain from "@/components/ui/Grain";
 import CardIcon from "@/components/ui/CardIcon";
+import FeaturedTeamCard from "@/components/ui/FeaturedTeamCard";
+import TeamCard from "@/components/ui/TeamCard";
 import { about } from "@/data/about";
+import { team } from "@/data/team";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -13,171 +15,77 @@ export const metadata: Metadata = {
     "High Ground Land Solutions is a Veteran-owned land clearing, excavating, and land management company serving West Alabama.",
 };
 
-const serviceIcons: Record<string, string> = {
-  "Prescribed Burning": "flame",
-  "Land Clearing & Road Construction": "road",
-  "Septic Tank & Water Line Installation": "droplet",
-  "High Fence & Property Management": "fence",
-  "Home Site & Hunting Lodge Prep": "cabin",
-  "Wildlife Habitat Improvement": "eagle",
-  "Pond Management": "river",
-  "Silviculture Consulting & Food Plot Plantings": "pine",
-};
+const [adam, ...restOfTeam] = team;
 
 export default function AboutPage() {
   return (
     <>
-      {/* Cinematic owner intro */}
-      <section className="relative overflow-hidden bg-brand-950 px-5 pb-20 pt-32 text-center text-white sm:pb-28 sm:pt-40">
-        <Image
-          src="/images/forest.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover opacity-25 will-change-transform motion-safe:animate-kenburns"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-950/85 via-brand-950/90 to-brand-950" />
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(ellipse at top, rgba(255,255,255,0.1), transparent 60%)",
-          }}
-        />
-        <Grain />
-
-        <Reveal className="relative mx-auto max-w-4xl">
-          <span className="mx-auto mb-5 block h-px w-14 bg-brand-500" />
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-500">
-            {about.veteranBadge}
-          </p>
-          <h1 className="mt-4 text-[clamp(2.5rem,8vw,5rem)] font-semibold leading-[0.95] text-white">
-            {about.ownerName}
-          </h1>
-          <p className="mt-4 text-sm font-semibold uppercase tracking-[0.25em] text-white/55">
-            {about.ownerTitle} · {about.companyName}
-          </p>
-
-          <p className="mx-auto mt-8 max-w-2xl text-[1.05rem] leading-relaxed text-white/80">
-            {about.bio[0]}
-          </p>
-
-          <div className="mx-auto mt-10 grid max-w-xl grid-cols-3 gap-3 sm:gap-4">
-            {about.stats.map((s) => (
-              <div
-                key={s.label}
-                className="rounded-2xl border border-white/15 bg-white/5 px-3 py-5 text-center backdrop-blur-sm"
-              >
-                <p className="font-display text-xl font-semibold text-white sm:text-2xl">
-                  {s.value}
-                </p>
-                <p className="mt-1 text-[10px] font-semibold uppercase leading-tight tracking-wide text-white/60 sm:text-[11px]">
-                  {s.label}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Button href={about.contact.cellPhoneHref} variant="secondary">
-              Call {about.contact.cellPhone}
-            </Button>
-            <Button href="/contact" variant="outline">
-              Send a Message
-            </Button>
-          </div>
-        </Reveal>
-
-        <AngledDivider fill="#ffffff" />
-      </section>
-
-      {/* Photo + Full Story */}
-      <section className="relative overflow-hidden bg-white px-5 pb-16 pt-16 sm:pb-24 sm:pt-24">
+      {/* Intro */}
+      <section className="relative overflow-hidden bg-white px-5 pb-16 pt-32 sm:pb-20 sm:pt-40">
         <div
           aria-hidden
           className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-brand-100 blur-3xl"
         />
-        <div className="relative mx-auto grid max-w-5xl grid-cols-1 items-start gap-14 sm:grid-cols-[minmax(0,300px)_1fr]">
-          <Reveal className="relative mx-auto w-full max-w-[280px] sm:sticky sm:top-28 sm:max-w-none sm:self-start">
-            <span
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-surface-2 blur-3xl"
+        />
+        <Reveal className="relative mx-auto max-w-3xl text-center">
+          <span className="mx-auto mb-5 block h-px w-14 bg-brand-500" />
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">
+            Our Story
+          </p>
+          <p className="mt-5 font-display text-[clamp(1.6rem,4vw,2.5rem)] font-semibold leading-tight text-brand-900">
+            {about.ourStory.tagline}
+          </p>
+          <div className="mx-auto mt-8 max-w-2xl relative">
+            <div
               aria-hidden
-              className="absolute -bottom-5 -right-5 -z-10 h-full w-full rounded-[1.75rem] bg-brand-900"
+              className="absolute -left-6 -right-6 -top-6 bottom-0 -z-10 rounded-2xl bg-brand-100/70 blur-[18px] transform rotate-1"
             />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] shadow-xl ring-1 ring-black/10">
-              <Image
-                src={about.photo}
-                alt={about.ownerName}
-                fill
-                sizes="(max-width: 640px) 280px, 300px"
-                className="object-cover"
-              />
+
+            <div className="space-y-5 rounded-xl bg-white/0 px-6 py-8 text-left leading-relaxed text-ink-2">
+              <p className="text-lg">
+                {about.ourStory.paragraph1Lead}
+                <Link href="/gallery-photos" className="font-bold text-brand-900 hover:underline">
+                  {about.ourStory.paragraph1EagleName}
+                </Link>
+                {about.ourStory.paragraph1Trail}
+              </p>
+              <p className="text-lg">
+                {about.ourStory.paragraph2Lead}
+                <strong className="font-bold">{about.ourStory.paragraph2Brand}</strong>
+                {about.ourStory.paragraph2Mid}
+                <strong className="font-bold">{about.ourStory.paragraph2Mission}</strong>
+              </p>
             </div>
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-brand-900 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white shadow-lg">
-              {about.veteranBadge}
-            </span>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Meet the Team */}
+      <section className="relative bg-surface-2 px-5 py-16 sm:py-24">
+        <div className="relative mx-auto max-w-6xl">
+          <Reveal className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-brand-600">
+              Meet the Team
+            </p>
+            <h2 className="mt-3 text-[clamp(1.75rem,4vw,2.5rem)] font-semibold text-brand-900">
+              The People Behind High Ground
+            </h2>
           </Reveal>
 
-          <div>
-            <Reveal>
-              <h2 className="text-sm font-semibold uppercase tracking-[0.3em] text-brand-600">
-                Our Story
-              </h2>
-              <div className="mt-5 space-y-5 leading-relaxed text-ink-2">
-                {about.bio.slice(1).map((paragraph, i) => (
-                  <p key={i}>{paragraph}</p>
-                ))}
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.1} className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <div className="rounded-2xl bg-surface-2 p-7 ring-1 ring-black/5">
-                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-600">
-                  Credentials
-                </h3>
-                <ul className="mt-4 space-y-3">
-                  {about.credentials.map((c) => (
-                    <li key={c} className="flex items-start gap-2.5 text-sm text-ink-2">
-                      <span
-                        aria-hidden
-                        className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-500 text-white"
-                      >
-                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
-                          <path
-                            d="M5 13l5 5L19 7"
-                            stroke="currentColor"
-                            strokeWidth="3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </span>
-                      {c}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="rounded-2xl bg-surface-2 p-7 ring-1 ring-black/5">
-                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-600">
-                  Services
-                </h3>
-                <ul className="mt-4 space-y-3">
-                  {about.services.map((s) => (
-                    <li key={s} className="flex items-center gap-2.5 text-sm font-medium text-ink">
-                      <span
-                        aria-hidden
-                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-900"
-                      >
-                        <CardIcon name={serviceIcons[s]} />
-                      </span>
-                      {s}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
+          {/* Row 1: Adam, featured */}
+          <div className="mt-12">
+            <FeaturedTeamCard member={adam} />
           </div>
+
+          {/* Row 2: the rest of the crew */}
+          <RevealGroup className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {restOfTeam.map((member) => (
+              <TeamCard key={member.slug} member={member} />
+            ))}
+          </RevealGroup>
         </div>
       </section>
 

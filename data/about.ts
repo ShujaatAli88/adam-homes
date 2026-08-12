@@ -1,25 +1,12 @@
-// COMPANY REWRITE (2026-08-04): this page previously framed Adam Aderholt as
-// a National Land Realty real-estate agent. Rewritten per client direction
-// to center High Ground Land Solutions as a land clearing / excavating /
-// land management company, with land sales as a secondary mention only.
-//
-// NEEDS CLIENT CONFIRMATION BEFORE THIS COPY SHIPS:
-//  - Year founded / years in operation - not stated anywhere in the existing
-//    site content, so no number has been invented. See the bracketed note
-//    in bio[2] below - it's written to render visibly on the page so it
-//    can't accidentally go live unedited.
-//  - Crew size / team headcount - not stated anywhere in the existing site
-//    content. Copy below stays generic ("our crew", "our own crew and
-//    equipment") rather than naming a number.
-//  - Service area - currently just "West Alabama", matching the existing
-//    site-wide footer tagline in data/site.ts. Confirm whether specific
-//    counties should be named instead.
+// REWRITE 2026: replaced by client-supplied "Our Story" copy. The old
+// placeholder bio (with the bracketed "years in operation" note pending
+// client confirmation) is gone now that the client supplied the real
+// company history below. The full team roster now lives in data/team.ts.
 export const about = {
   companyName: "High Ground Land Solutions",
-  tagline: "Land Clearing, Excavating & Land Management",
-  serviceArea: "West Alabama",
+  tagline: "Improving Land. Building Legacies.",
   ownerName: "Adam Aderholt",
-  ownerTitle: "Owner-Operator",
+  ownerTitle: "Owner & Founder",
   photo: "/images/team/adam-aderholt.jpg",
   veteranBadge: "Veteran-Owned & Operated",
 
@@ -29,31 +16,22 @@ export const about = {
     { value: "West Alabama", label: "Service Area" },
   ],
 
-  credentials: [
-    "Certified Prescribed Burn Manager",
-    "U.S. Army Veteran — commissioned officer",
-    "B.S. Business Administration, The Citadel",
-    "Veteran-Owned & Operated Business",
-  ],
-
-  services: [
-    "Prescribed Burning",
-    "Land Clearing & Road Construction",
-    "Septic Tank & Water Line Installation",
-    "High Fence & Property Management",
-    "Home Site & Hunting Lodge Prep",
-    "Wildlife Habitat Improvement",
-    "Pond Management",
-    "Silviculture Consulting & Food Plot Plantings",
-  ],
-
-  bio: [
-    "High Ground Land Solutions is a full-service land clearing, excavating, and land management company based in Tuscaloosa, Alabama. We help landowners across West Alabama turn raw, overgrown, or hard-to-access acreage into productive, usable land — through prescribed burning, land clearing, road construction, septic and waterline installation, and hands-on property management.",
-    "The company is owned and operated by Adam Aderholt, a U.S. Army veteran and Citadel graduate who runs every project personally, from the first walk of the property to the final grade. Adam is a Certified Prescribed Burn Manager with hands-on experience operating the equipment his crew runs every day.",
-    "[CONFIRM WITH CLIENT: years in operation] High Ground Land Solutions has been serving West Alabama landowners for [X years] — every job is handled in-house by our own crew and equipment, with no subcontracting out the work that matters.",
-    "Beyond clearing and maintenance, High Ground also helps select clients buy and sell land — but land management is the core of the business, not a side effect of it.",
-    "Adam lives in Tuscaloosa, Alabama, with his two children, Shane and Savannah, and is proud to run a Veteran-owned, owner-operated business serving the land and people of West Alabama.",
-  ],
+  // Segmented (rather than one string) so the page can apply the client's
+  // exact bolding and link the "Eagle's Nest" mention to the photo gallery
+  // without altering the surrounding copy.
+  ourStory: {
+    paragraph1Lead:
+      "High Ground Land Solutions began with a vision for what a piece of land could become. Owner Adam Aderholt has been brokering land for nearly 20 years, and in 2013, an out-of-state client who had purchased property through Adam asked him to be his “eyes and ears” back home and help create the homesite and property he envisioned. Adam saw the potential in the land and teamed up with Mr. Billy, a well-known and experienced local heavy equipment operator, to bring that vision to life. Together, they transformed the property and successfully completed what became High Ground’s first project—",
+    paragraph1EagleName: "“The Eagle's Nest,”",
+    paragraph1Trail: " which you can see in our photo gallery.",
+    paragraph2Lead:
+      "What began with one property grew naturally into helping other landowners improve and get more from their land. After several years and many successful projects, Adam made it official in 2020, establishing the name and brand ",
+    paragraph2Brand: "High Ground Land Solutions",
+    paragraph2Mid:
+      ". Land clearing, road construction, and prescribed burning were the foundation of the company then, and they remain at the heart of what we do today. The difference is years of added experience, an expanded range of services, and a dedicated, capable crew that now includes a registered forester and wildlife biologist. From buying and envisioning a piece of land to improving, managing, and enjoying it for years to come, High Ground was built around one simple idea: ",
+    paragraph2Mission: "help landowners make the most of their land.",
+    tagline: "Improving Land. Building Legacies.",
+  },
 
   contact: {
     cellPhone: "(205) 410-2699",

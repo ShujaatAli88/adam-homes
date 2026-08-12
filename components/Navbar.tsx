@@ -56,10 +56,10 @@ export default function Navbar() {
       <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-3 sm:px-5 sm:pt-5">
         <div
           className={clsx(
-            "flex w-full max-w-[1320px] items-center justify-between rounded-full transition-all duration-500 ease-out",
+            "flex w-full max-w-[1360px] items-center justify-between rounded-full transition-all duration-500 ease-out",
             scrolled
-              ? "bg-white/80 px-6 py-3 shadow-lg ring-1 ring-black/5 backdrop-blur-xl sm:px-8"
-              : "bg-white px-6 py-4 shadow-lg ring-1 ring-black/5 sm:px-8 sm:py-5"
+              ? "bg-white/80 px-6 py-3 shadow-lg ring-1 ring-black/5 backdrop-blur-xl sm:px-8 sm:py-4"
+              : "bg-white px-6 py-5 shadow-lg ring-1 ring-black/5 sm:px-8 sm:py-6"
           )}
         >
           <Link href="/" className="flex shrink-0 items-center gap-3">
@@ -72,7 +72,7 @@ export default function Navbar() {
                 priority
                 className={clsx(
                   "w-auto transition-all duration-500",
-                  scrolled ? "h-12 sm:h-14" : "h-14 sm:h-16"
+                  scrolled ? "h-14 sm:h-16" : "h-16 sm:h-20"
                 )}
               />
             </motion.span>
@@ -165,10 +165,10 @@ export default function Navbar() {
                 )}
 
                 {item.children && item.label === "SERVICES" && (
-                  <div className="invisible absolute right-0 top-full w-[540px] translate-y-3 pt-3 opacity-0 transition-all duration-300 ease-out group-hover:visible group-hover:translate-y-1 group-hover:opacity-100">
+                  <div className="invisible absolute right-0 top-full w-[360px] translate-y-3 pt-3 opacity-0 transition-all duration-300 ease-out group-hover:visible group-hover:translate-y-1 group-hover:opacity-100">
                     <div className="overflow-hidden rounded-2xl bg-white shadow-2xl shadow-black/20 ring-1 ring-black/5">
                       <span className="block h-[3px] w-full bg-gradient-to-r from-brand-500 via-brand-600 to-brand-500" />
-                      <ul className="grid grid-cols-2 gap-1 p-3">
+                      <ul className="grid grid-cols-1 gap-1 p-3">
                         {item.children.map((child, ci) => (
                           <li key={child.label}>
                             <Link

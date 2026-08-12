@@ -36,7 +36,9 @@ export default function ControlBurningPage() {
               {hero.headline}
             </h2>
             <p className="mx-auto mt-6 max-w-3xl leading-relaxed text-ink-2">
-              {hero.intro}
+              {hero.introLead}
+              <strong className="font-bold">{hero.introBold}</strong>
+              {hero.introTrail}
             </p>
           </Reveal>
         </div>

@@ -10,7 +10,7 @@ import Reveal from "@/components/ui/Reveal";
 import {
   heroIntro,
   heroVideo,
-  homeProjectCards,
+  homeProjectCardsExtended as homeProjectCards,
   homeServiceCards,
   passionText,
 } from "@/data/home";
@@ -59,7 +59,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-5xl">
           <Reveal className="relative mb-4 sm:mb-6">
             <span className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">
-              West Alabama Land Specialists
+              Southeast Land Specialists
             </span>
           </Reveal>
 

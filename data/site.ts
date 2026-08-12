@@ -40,7 +40,11 @@ export const site = {
     }
   ],
   "footerNote": "High Ground Land Solutions | © All Rights Reserved | Web Design & Marketing by Atlanta SEO",
-  "footerTagline": "High Ground Land Solutions is a full-service licensed and insured excavating and land management company serving West Alabama — Owner-Operated Land Broker and Veteran-owned.",
+  "footerTagline": {
+    "lead": "High Ground Land Solutions is a full-service licensed and insured excavating and land management company serving West Alabama",
+    "emphasis": "and beyond",
+    "trail": " — Owner-Operated Land Broker and Veteran-owned."
+  },
   "veteranBadge": "Veteran-Owned & Operated",
   "newsletterLabel": "Get Land Listings & Updates",
   "social": {
@@ -66,8 +70,8 @@ export const nav: NavItem[] = [
         "href": "/land-maintenance-and-management"
       },
       {
-        "label": "Road Construction",
-        "href": "/road-construction",
+        "label": "Land Clearing & Road Construction",
+        "href": "/land-clearing-and-road-construction",
         "icon": "road"
       },
       {
@@ -86,8 +90,8 @@ export const nav: NavItem[] = [
         "icon": "droplet"
       },
       {
-        "label": "Home Site Preparation / Hunting Lodge",
-        "href": "/home-site-preparation",
+        "label": "Home & Hunting Lodge Site Preparation",
+        "href": "/home-and-hunting-lodge-site-preparation",
         "icon": "cabin"
       },
       {
@@ -96,9 +100,14 @@ export const nav: NavItem[] = [
         "icon": "fence"
       },
       {
-        "label": "Silviculture Consulting & Food Plot Plantings",
-        "href": "/silviculture-consulting-and-food-plot-plantings",
+        "label": "Silviculture Consulting",
+        "href": "/silviculture-consulting",
         "icon": "pine"
+      },
+      {
+        "label": "Food Plot Plantings",
+        "href": "/food-plot-plantings",
+        "icon": "sapling"
       }
     ]
   },
