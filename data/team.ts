@@ -8,18 +8,11 @@ export type TeamMember = {
 
 // Photo/bio status per the client's 2026 "Meet the Team" brief:
 //  - Adam Aderholt: existing photo, may be replaced by the client later.
-//  - Shane Aderholt: bio supplied, photo PENDING from client.
-//  - Billy Feltman: bio AND photo both PENDING from client - do not invent
-//    filler copy, render the placeholder slot only.
-//  - Neal Hargle: bio supplied, photo PENDING from client.
-//  - Matthew Sheffield: bio supplied. The client's brief said a photo file
-//    (matthew-sheffield.jpg) was ready, but it was never found in
-//    /public/images/team - treated as pending until the file actually
-//    shows up there.
-//  - Jerry Sanford: bio supplied, photo supplied (jerry-sanford.jpg,
-//    800x800 - a pre-resized jerry-sanford-400.jpg also sits alongside it,
-//    unused; Next's built-in image optimizer generates whatever
-//    intermediate sizes it needs from the single 800x800 source).
+//  - Shane Aderholt: bio supplied, photo still PENDING from client.
+//  - Billy Feltman: bio and photo supplied (billy.jpg).
+//  - Neal Hargle: bio supplied, photo supplied (neal.jpg).
+//  - Matthew Sheffield: bio and photo supplied (matthew-sheffield.jpg).
+//  - Jerry Sanford: bio and photo supplied (jerry.jpg).
 export const team: TeamMember[] = [
   {
     slug: "adam-aderholt",
@@ -48,11 +41,19 @@ export const team: TeamMember[] = [
   {
     slug: "billy-feltman",
     name: "Billy Feltman",
-    // Bio pending from client - intentionally left blank, not filler text.
+    photo: "/images/team/billy.jpg",
+    bio: [
+      "If experience had an encyclopedia, around High Ground we'd probably just call it Mr. Billy. A man of many talents and more than five decades of hands-on experience, Billy has built a reputation for being able to figure out just about anything involving land, equipment, water, or dirt. Some of our clients have even referred to him as “a magician on a bulldozer”—and anyone who has watched him work understands why.",
+      "Mr. Billy began his career as a machine operator and mechanic in 1973 and started drilling wells in 1975, a trade he continues to this day. After decades of drilling throughout the area, there are few wells in the surrounding three counties that he either hasn't drilled himself or doesn't know something about. In the early 1990s, he expanded further into heavy equipment operation, and in 1999 he became certified to install septic systems. His ability to read terrain, understand soils and drainage, and know how to shape a piece of ground comes from a lifetime of actually doing the work.",
+      "His experience isn't limited to equipment. Mr. Billy has also been a gas station and restaurant owner and, in more recent years, he and his better half opened Tyro Sports Grill. Somehow, through all of that, he has also found time to travel throughout North America hunting just about every kind of game imaginable. His lifetime spent outdoors gives him an appreciation for recreational and hunting properties that goes well beyond moving dirt.",
+      "Mr. Billy has been part of the High Ground story since the beginning. In 2013, he teamed up with Adam on The Eagle's Nest, the project that ultimately planted the seed for what would become High Ground Land Solutions. Since then, his knowledge, steady hand, problem-solving ability, and old-school work ethic have made him an invaluable part of the team and a mentor to those working alongside him.",
+      "And when Mr. Billy finally does take a little time away from a bulldozer, excavator, or well rig, there's a good chance you'll find him turning steaks at the restaurant—or trying his luck at the casino.",
+    ],
   },
   {
     slug: "neal-hargle",
     name: "Neal Hargle",
+    photo: "/images/team/neal.jpg",
     bio: [
       "Neal Hargle is a resident of Tuscaloosa County in West Alabama and has more than 20 years of experience in natural resource management. He earned his B.S. in Forestry/Wildlife Management from Mississippi State University and his M.Ed. from Auburn University.",
       "Neal is an Alabama Registered Forester, Certified Wildlife Biologist, and Prescribed Burn Manager. He is also a member of the Central Alabama Prescribed Burn Association and is passionate about wildlife management, forestry, prescribed fire, and conservation.",
@@ -72,7 +73,7 @@ export const team: TeamMember[] = [
   {
     slug: "jerry-sanford",
     name: "Jerry Sanford",
-    photo: "/images/team/jerry-sanford.jpg",
+    photo: "/images/team/jerry.jpg",
     bio: [
       "If there's one thing you need to know about Jerry, it's that he knows how to work. Dependable, skilled, and never afraid of a difficult job, Jerry is the kind of person you want beside you when there's work to be done. He is a certified welder, certified in chainsaw operations, and holds a Commercial Driver's License, making him a versatile and valuable member of the High Ground Land Solutions crew.",
       "Jerry is an exceptional sawyer and, in Adam's words, “the best chainsaw cutter man I've seen.” His skill with a saw, ability to work safely in challenging conditions, and understanding of how to approach difficult cutting situations make him an important part of High Ground's land clearing and property improvement work.",
