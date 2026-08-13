@@ -15,11 +15,13 @@ export default function TeamPhoto({
   title,
   photo,
   className = "",
+  priority = false,
 }: {
   name: string;
   title?: string;
   photo?: string;
   className?: string;
+  priority?: boolean;
 }) {
   if (photo) {
     return (
@@ -32,7 +34,8 @@ export default function TeamPhoto({
           fill
           sizes="(max-width: 640px) 160px, 220px"
           className="object-cover object-top"
-          loading="lazy"
+          loading={priority ? undefined : "lazy"}
+          preload={priority}
         />
       </div>
     );

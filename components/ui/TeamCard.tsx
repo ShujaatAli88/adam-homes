@@ -26,7 +26,7 @@ export default function TeamCard({ member }: { member: TeamMember }) {
     >
       <Link
         href={`/team/${member.slug}`}
-        className="group relative flex h-full min-h-[22rem] flex-col overflow-hidden rounded-2xl ring-1 ring-black/10 transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.45)]"
+        className="group relative flex h-full min-h-[25rem] flex-col overflow-hidden rounded-2xl ring-1 ring-black/10 transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.45)]"
       >
         {member.photo ? (
           <Image
@@ -34,7 +34,7 @@ export default function TeamCard({ member }: { member: TeamMember }) {
             alt={member.title ? `${member.name}, ${member.title}` : `${member.name}, High Ground Land Solutions crew member`}
             fill
             sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 360px"
-            className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
+            className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
             loading="lazy"
           />
         ) : (
@@ -49,8 +49,10 @@ export default function TeamCard({ member }: { member: TeamMember }) {
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent transition-opacity duration-500 ease-out" />
         <div className="absolute inset-0 bg-brand-950/0 transition-colors duration-500 ease-out group-hover:bg-brand-950/75" />
 
-        <div className="relative z-10 mt-auto flex flex-col items-center gap-1 px-6 pb-7 pt-10 text-center">
-          <h3 className="font-display text-xl font-semibold text-white">{member.name}</h3>
+        <div className="relative z-10 mt-auto flex flex-col items-center gap-1.5 px-6 pb-7 pt-10 text-center">
+          <h3 className="font-display text-xl font-semibold tracking-wide text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.5)]">
+            {member.name}
+          </h3>
           {member.title && (
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-500">
               {member.title}
@@ -60,6 +62,14 @@ export default function TeamCard({ member }: { member: TeamMember }) {
             <p className="text-[10px] font-semibold uppercase tracking-wider text-white/45">
               Photo Coming Soon
             </p>
+          )}
+          {member.summary && (
+            <>
+              <span aria-hidden className="mt-1 h-px w-9 bg-brand-500/80" />
+              <p className="mt-2 max-w-[24rem] text-[0.9rem] font-light leading-relaxed text-white/90">
+                {member.summary}
+              </p>
+            </>
           )}
 
           <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out group-hover:grid-rows-[1fr]">

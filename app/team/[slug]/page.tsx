@@ -63,6 +63,7 @@ export default async function TeamMemberPage({
               title={member.title}
               photo={member.photo}
               className="w-40 shrink-0 sm:w-56"
+              priority
             />
             <div className="pt-2">
               {member.title && (

@@ -75,11 +75,6 @@ export const nav: NavItem[] = [
         "icon": "road"
       },
       {
-        "label": "Land For Sale",
-        "href": "/land-for-sale",
-        "icon": "for-sale"
-      },
-      {
         "label": "Controlled Burns",
         "href": "/control-burning",
         "icon": "flame"
@@ -108,6 +103,11 @@ export const nav: NavItem[] = [
         "label": "Food Plot Plantings",
         "href": "/food-plot-plantings",
         "icon": "sapling"
+      },
+      {
+        "label": "Land For Sale",
+        "href": "/land-for-sale",
+        "icon": "for-sale"
       }
     ]
   },
