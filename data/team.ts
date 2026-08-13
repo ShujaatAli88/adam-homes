@@ -20,7 +20,7 @@ export type TeamMember = {
 //  - Billy Feltman: bio and photo supplied (billy.jpg).
 //  - Neal Hargle: bio supplied, photo supplied (neal.jpg).
 //  - Matthew Sheffield: bio and photo supplied (matthew-sheffield.jpg).
-//  - Jerry Sanford: bio and photo supplied (jerry.jpg).
+//  - Jerry Sanford: bio and photo supplied (Jerry.jpg).
 export const team: TeamMember[] = [
   {
     slug: "adam-aderholt",
@@ -90,7 +90,7 @@ export const team: TeamMember[] = [
   {
     slug: "jerry-sanford",
     name: "Jerry Sanford",
-    photo: "/images/team/jerry.jpg",
+    photo: "/images/team/Jerry.jpg",
     summary:
       "A certified welder, chainsaw operator, and CDL holder — one of the most dependable, hardest-working hands on the crew.",
     bio: [
