@@ -11,12 +11,12 @@ export type TeamMember = {
 };
 
 // Photo/bio status per the client's 2026 "Meet the Team" brief:
-//  - Adam Aderholt: photo updated to Adam_about.png (About page team card
+//  - Adam Aderholt: photo updated to Adam_about.jpg (About page team card
 //    and his /team/adam-aderholt detail page only). The Contact page's
 //    "talking directly to Adam" banner uses a separate photo field
 //    (about.photo in data/about.ts, still adam-aderholt.jpg) and is
 //    intentionally untouched.
-//  - Shane Aderholt: bio and photo supplied (Shane.png).
+//  - Shane Aderholt: bio and photo supplied (Shane.jpg).
 //  - Billy Feltman: bio and photo supplied (billy.jpg).
 //  - Neal Hargle: bio supplied, photo supplied (neal.jpg).
 //  - Matthew Sheffield: bio and photo supplied (matthew-sheffield.jpg).
@@ -26,7 +26,7 @@ export const team: TeamMember[] = [
     slug: "adam-aderholt",
     name: "Adam Aderholt",
     title: "Owner & Founder",
-    photo: "/images/team/Adam_about.png",
+    photo: "/images/team/Adam_about.jpg",
     bio: [
       "Adam Aderholt is the owner and founder of High Ground Land Solutions and has spent nearly two decades working with land and the people who own it. His experience in land brokerage, property development, wildlife and habitat management, and hands-on land improvement gives him a unique perspective—not only on what land is worth, but on what it can become.",
       "An Alabama native, Adam grew up with a passion for the outdoors and an appreciation for the land. He earned a Bachelor of Science in Business Administration from The Citadel before commissioning into the United States Army, where he served in various roles throughout the United States and abroad. Following his military service, Adam worked across several business sectors, including serving as managing member of a business valuation firm, before ultimately focusing his career on land.",
@@ -39,7 +39,7 @@ export const team: TeamMember[] = [
   {
     slug: "shane-aderholt",
     name: "Shane Aderholt",
-    photo: "/images/team/Shane.png",
+    photo: "/images/team/Shane.jpg",
     summary:
       "A certified welder and heavy equipment operator who grew up learning the land alongside his dad, Adam — now serving as a U.S. Army Infantryman.",
     bio: [
