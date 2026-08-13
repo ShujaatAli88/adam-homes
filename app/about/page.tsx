@@ -47,17 +47,12 @@ export default function AboutPage() {
             <div className="space-y-5 rounded-xl bg-white/0 px-6 py-8 text-left leading-relaxed text-ink-2">
               <p className="text-lg">
                 {about.ourStory.paragraph1Lead}
-                <Link href="/gallery-photos" className="font-bold text-brand-900 hover:underline">
+                <Link href="/gallery-photos" className="text-brand-900 hover:underline">
                   {about.ourStory.paragraph1EagleName}
                 </Link>
-                {about.ourStory.paragraph1Trail}
               </p>
-              <p className="text-lg">
-                {about.ourStory.paragraph2Lead}
-                <strong className="font-bold">{about.ourStory.paragraph2Brand}</strong>
-                {about.ourStory.paragraph2Mid}
-                <strong className="font-bold">{about.ourStory.paragraph2Mission}</strong>
-              </p>
+              <p className="text-lg">{about.ourStory.paragraph2}</p>
+              <p className="text-lg">{about.ourStory.paragraph3}</p>
             </div>
           </div>
         </Reveal>
