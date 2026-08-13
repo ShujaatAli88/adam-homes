@@ -100,7 +100,7 @@ export default function Footer() {
               src={site.logoFooter}
               alt={`${site.name} Logo`}
               width={1458}
-              height={464}
+              height={503}
               className="h-auto w-full"
             />
           </Link>

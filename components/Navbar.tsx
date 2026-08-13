@@ -68,7 +68,7 @@ export default function Navbar() {
                 src={site.logoNavbar}
                 alt={`${site.name} Logo`}
                 width={1458}
-                height={464}
+                height={503}
                 priority
                 className={clsx(
                   "w-auto transition-all duration-500",
@@ -228,7 +228,7 @@ export default function Navbar() {
                 src={site.logoNavbar}
                 alt={`${site.name} Logo`}
                 width={1458}
-                height={464}
+                height={503}
                 className="h-11 w-auto brightness-0 invert"
               />
               <button
