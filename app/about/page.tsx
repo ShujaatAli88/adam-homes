@@ -50,6 +50,7 @@ export default function AboutPage() {
                 <Link href="/gallery-photos" className="text-brand-900 hover:underline">
                   {about.ourStory.paragraph1EagleName}
                 </Link>
+                {about.ourStory.paragraph1Trail}
               </p>
               <p className="text-lg">{about.ourStory.paragraph2}</p>
               <p className="text-lg">{about.ourStory.paragraph3}</p>

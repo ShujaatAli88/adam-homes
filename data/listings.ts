@@ -47,6 +47,16 @@ export const listings: Listing[] = [
   },
   {
     status: "active",
+    title: "Ralph: Sipsey Valley Rd. Tract w/ Home - Pond - Pasture",
+    county: "Tuscaloosa County, AL",
+    acres: "102 +/- Acres",
+    price: "$1,299,000",
+    slug: "ralph-sipsey-valley-rd-tract-w-home-pond-pasture",
+    img: "/media/listings/ralph-sipsey-valley-rd-tract-w-home-pond-pasture.jpg",
+    listingUrl: "https://nationalland.com/listing/ralph-sipsey-valley-rd-tract-w-home-pond-pasture"
+  },
+  {
+    status: "active",
     title: "Tuscaloosa Commercial Opportunity on University Blvd.",
     county: "Tuscaloosa County, AL",
     acres: "0.48 +/- Acres",

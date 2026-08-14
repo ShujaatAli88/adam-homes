@@ -21,8 +21,9 @@ export const about = {
   // surrounding copy.
   ourStory: {
     paragraph1Lead:
-      "High Ground Land Solutions began with a vision for what a piece of land could become. In 2013, an out-of-state client who had purchased property through Adam asked him to be their “eyes and ears” for when they had to go back home and to turn his vision for the property into reality. Adam teamed up with experienced heavy equipment operator Mr. Billy, and together they transformed the property into what became High Ground’s first project—",
-    paragraph1EagleName: "“The Eagle’s Nest.”",
+      "High Ground Land Solutions began with a vision for what a piece of land could become. Owner Adam Aderholt has been brokering land for nearly 20 years. In 2013, an out-of-state client entrusted Adam to be their “eyes and ears” back home and to turn his vision for the property into reality. Adam teamed up with Mr. Billy, a well-known and experienced local heavy equipment operator, and together they transformed the property. The successful project became High Ground’s first—",
+    paragraph1EagleName: "“The Eagle’s Nest,”",
+    paragraph1Trail: " which you can see in our photo gallery.",
     paragraph2:
       "One project soon grew into helping other landowners improve and get more from their properties. In 2020, after gaining years of experience, Adam officially established High Ground Land Solutions. Land clearing, road construction, and prescribed burning remain at the heart of the company, but today High Ground offers a much broader range of land improvement and management services backed by an experienced crew, registered forester, and wildlife biologist.",
     paragraph3:
