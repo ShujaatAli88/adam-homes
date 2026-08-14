@@ -35,7 +35,7 @@ export default function FeaturedTeamCard({ member }: { member: TeamMember }) {
               fill
               sizes="(max-width: 640px) 100vw, 380px"
               className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-              priority
+              preload
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-brand-600 to-brand-950">
