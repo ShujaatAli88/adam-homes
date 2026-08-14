@@ -20,7 +20,7 @@ export type TeamMember = {
 //  - Billy Feltman: bio and photo supplied (billy.jpg).
 //  - Neal Hargle: bio supplied, photo supplied (neal.jpg).
 //  - Matthew Sheffield: bio and photo supplied (matthew-sheffield.jpg).
-//  - Jerry Sanford: bio and photo supplied (jerry.jpg).
+//  - Jerry Sanford: bio and photo supplied (Jerry.jpg).
 export const team: TeamMember[] = [
   {
     slug: "adam-aderholt",
@@ -76,6 +76,19 @@ export const team: TeamMember[] = [
     ],
   },
   {
+    slug: "jerry-sanford",
+    name: "Jerry Sanford",
+    photo: "/images/team/Jerry.jpg",
+    summary:
+      "A certified welder, chainsaw operator, and CDL holder — one of the most dependable, hardest-working hands on the crew.",
+    bio: [
+      "If there's one thing you need to know about Jerry, it's that he knows how to work. Dependable, skilled, and never afraid of a difficult job, Jerry is the kind of person you want beside you when there's work to be done. He is a certified welder, certified in chainsaw operations, and holds a Commercial Driver's License, making him a versatile and valuable member of the High Ground Land Solutions crew.",
+      "Jerry is an exceptional sawyer and, in Adam's words, “the best chainsaw cutter man I've seen.” His skill with a saw, ability to work safely in challenging conditions, and understanding of how to approach difficult cutting situations make him an important part of High Ground's land clearing and property improvement work.",
+      "He is also an experienced torch man on High Ground's prescribed burn crew. When it's time to put fire on the ground, there aren't many places Jerry won't take a drip torch. His willingness to work through difficult terrain and conditions, combined with his experience and respect for fire, makes him someone the crew can depend on when executing a prescribed burn.",
+      "Above all, Jerry brings an old-fashioned work ethic to High Ground. He shows up, works hard, and does what it takes to get the job done right—and that makes him an important part of the High Ground team.",
+    ],
+  },
+  {
     slug: "matthew-sheffield",
     name: "Matthew Sheffield",
     photo: "/images/team/matthew-sheffield.jpg",
@@ -85,19 +98,6 @@ export const team: TeamMember[] = [
       "Matthew Sheffield is a West Alabama native with a few years of hands-on experience in the land management field. He earned his Associate of Science degree from Bevill State Community College and is currently pursuing a degree in Forestry and Conservation Field Biology at the University of West Alabama.",
       "With a passion for forestry, wildlife management, conservation, and land stewardship, Matthew enjoys working in the field and gaining hands-on experience in natural resource management. As a former collegiate athlete, he brings the same discipline, work ethic, and dedication from athletics into his work in the land management field.",
       "Outside of his professional and academic pursuits, Matthew enjoys hunting, fishing, and spending time outdoors.",
-    ],
-  },
-  {
-    slug: "jerry-sanford",
-    name: "Jerry Sanford",
-    photo: "/images/team/jerry.jpg",
-    summary:
-      "A certified welder, chainsaw operator, and CDL holder — one of the most dependable, hardest-working hands on the crew.",
-    bio: [
-      "If there's one thing you need to know about Jerry, it's that he knows how to work. Dependable, skilled, and never afraid of a difficult job, Jerry is the kind of person you want beside you when there's work to be done. He is a certified welder, certified in chainsaw operations, and holds a Commercial Driver's License, making him a versatile and valuable member of the High Ground Land Solutions crew.",
-      "Jerry is an exceptional sawyer and, in Adam's words, “the best chainsaw cutter man I've seen.” His skill with a saw, ability to work safely in challenging conditions, and understanding of how to approach difficult cutting situations make him an important part of High Ground's land clearing and property improvement work.",
-      "He is also an experienced torch man on High Ground's prescribed burn crew. When it's time to put fire on the ground, there aren't many places Jerry won't take a drip torch. His willingness to work through difficult terrain and conditions, combined with his experience and respect for fire, makes him someone the crew can depend on when executing a prescribed burn.",
-      "Above all, Jerry brings an old-fashioned work ethic to High Ground. He shows up, works hard, and does what it takes to get the job done right—and that makes him an important part of the High Ground team.",
     ],
   },
 ];
