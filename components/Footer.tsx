@@ -95,13 +95,13 @@ export default function Footer() {
 
       <div className="mx-auto grid max-w-[1400px] gap-12 px-5 py-16 sm:px-8 sm:py-20 md:grid-cols-[1.2fr_0.7fr_1fr_1fr]">
         <Reveal>
-          <Link href="/" className="mb-5 flex w-full max-w-sm">
+          <Link href="/" className="mb-5 inline-flex">
             <Image
               src={site.logoFooter}
               alt={`${site.name} Logo`}
-              width={1458}
-              height={503}
-              className="h-auto w-full"
+              width={1080}
+              height={1080}
+              className="h-auto w-44 sm:w-48"
             />
           </Link>
 
