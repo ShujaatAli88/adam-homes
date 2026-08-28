@@ -2,7 +2,7 @@ export const site = {
   "name": "High Ground Land Solutions",
   "logo": "/images/logo-v2.png",
   "logoNavbar": "/images/adam_logo_navbar.png",
-  "logoFooter": "/images/adam_logo_footer.png",
+  "logoFooter": "/images/Hat-Updated-Logo..gif",
   "favicon": "/favicon.png",
   "email": "adam@highgroundland.com",
   "phone": "(205) 410-2699",
